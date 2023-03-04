@@ -1,0 +1,6 @@
+.alignment-parent-div{
+    display: flex;
+    margin: 1rem 2rem  0 2rem;
+display: grid;
+gap: 1rem;
+}
