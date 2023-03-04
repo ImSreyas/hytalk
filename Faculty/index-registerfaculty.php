@@ -1,3 +1,17 @@
+<?php
+session_start();
+if ($_SESSION['registration_status'] == "success") {
+  $reg_success = true;
+  unset($_SESSION['registration_status']);
+} else if ($_SESSION['registration_status'] == "email") {
+  $reg_email = true;
+  unset($_SESSION['registration_status']);
+} else if ($_SESSION['registration_status'] == "fail") {
+  $reg_error = true;
+  unset($_SESSION['registration_status']);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -95,6 +109,24 @@
                 <h3>Register Now !!!</h3>
                 <p class="text-muted">Be cool and join today. Meet new friends</p>
 
+                <!-- alertbox while the reg fails -->
+                <?php
+                if (isset($reg_error)) {
+                  echo '<div class="alert alert-danger" role="alert">
+                  Registration failed something went wrong !
+                </div>';
+                }
+                ?>
+                <!-- alertbox while the reg success -->
+                <?php
+                if (isset($reg_success)) {
+                  echo '<div class="alert alert-success" role="alert">
+                  Registration Success
+                </div>';
+                }
+                ?>
+
+
                 <!--Register Form-->
                 <form action="Registration.php" name="registration_form" id='registration_form' class="form-inline" method="post">
                   <div class="row">
@@ -117,6 +149,17 @@
                       <input id="mobile n.o" class="form-control input-group-lg" type="text" name="mobile" title="Enter your Mobile n.o" placeholder="Mob n.o" pattern="[789][0-9]{9}" />
                     </div>
                   </div>
+
+                  <!-- email already -->
+                  <?php
+                  if (isset($reg_email)) {
+                    echo '<div class="alert alert-warning" role="alert">
+                    Email Already in use!
+                  </div>';
+                  }
+                  ?>
+
+
                   <div class="row">
                     <div class="form-group col-xs-12">
                       <label for="password" class="sr-only">Password</label>
@@ -239,7 +282,7 @@
                 <p class="text-muted">Log into your account</p>
 
                 <!--Login Form-->
-                <form name="Login_form" id='Login_form'>
+                <form name="Login_form" id='Login_form' action="Login.php" method="post">
                   <div class="row">
                     <div class="form-group col-xs-12">
                       <label for="my-email" class="sr-only">Email</label>
