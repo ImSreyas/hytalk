@@ -1,8 +1,14 @@
+
+<?php 
+
+$followingCount = mysqli_query($conn, "select * from friends where friend_id='$student_id' && status='1'")->num_rows;
+
+?>
 <div class="col-md-3 static">
 <div class="profile-card">
-    <img src="images/users/user-1.jpg" alt="user" class="profile-photo" />
-    <h5><a href="timeline.php" class="text-white">Prince</a></h5>
-    <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 976 followers</a>
+    <img src="../<?php echo $student_pic; ?>" alt="user" class="profile-photo" />
+    <h5><a href="timeline.php" class="text-white"><?php echo $student_name ?></a></h5>
+    <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> <?php echo $followingCount; ?></a>
 </div><!--profile card ends-->
 <ul class="nav-news-feed">
     <li><i class="icon ion-ios-paper"></i><div><a href="newsfeed.php">My Newsfeed</a></div></li>

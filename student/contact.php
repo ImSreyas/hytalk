@@ -1,3 +1,8 @@
+<?php
+session_start();
+include('static/header.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	

@@ -1,9 +1,6 @@
 <?php
 session_start();
-include('../php/db/db.php');
-if(!isset($_SESSION['student_id'])){
-    header('location:../index.php');
-}
+include('static/header.php');
 ?>
 
 <!DOCTYPE html>
@@ -703,46 +700,7 @@ if(!isset($_SESSION['student_id'])){
 
     			<!-- Newsfeed Common Side Bar Right
           ================================================= -->
-    			<div class="col-md-2 static">
-            <div class="suggestions" id="sticky-sidebar">
-              <h4 class="grey">Who to Follow</h4>
-              <div class="follow-user">
-                <img src="images/users/user-11.jpg" alt="" class="profile-photo-sm pull-left" />
-                <div>
-                  <h5><a href="timeline.php">Holland</a></h5>
-                  <a href="#" class="text-green">Add friend</a>
-                </div>
-              </div>
-              <div class="follow-user">
-                <img src="images/users/user-12.jpg" alt="" class="profile-photo-sm pull-left" />
-                <div>
-                  <h5><a href="timeline.php">Cris Evans</a></h5>
-                  <a href="#" class="text-green">Add friend</a>
-                </div>
-              </div>
-              <div class="follow-user">
-                <img src="images/users/user-13.jpg" alt="" class="profile-photo-sm pull-left" />
-                <div>
-                  <h5><a href="timeline.php">Brian Lara</a></h5>
-                  <a href="#" class="text-green">Add friend</a>
-                </div>
-              </div>
-              <div class="follow-user">
-                <img src="images/users/user-14.jpg" alt="" class="profile-photo-sm pull-left" />
-                <div>
-                  <h5><a href="timeline.php">Modric</a></h5>
-                  <a href="#" class="text-green">Add friend</a>
-                </div>
-              </div>
-              <div class="follow-user">
-                <img src="images/users/user-15.jpg" alt="" class="profile-photo-sm pull-left" />
-                <div>
-                  <h5><a href="timeline.php">Benzema</a></h5>
-                  <a href="#" class="text-green">Add friend</a>
-                </div>
-              </div>
-            </div>
-          </div>
+        <?php include('static/right-side-bar.php') ?>
     		</div>
     	</div>
     </div>

@@ -1,9 +1,6 @@
 <?php
 session_start();
-include('../php/db/db.php');
-if(!isset($_SESSION['student_id'])){
-    header('location:../index.php');
-}
+include('static/header.php');
 ?>
 
 <!DOCTYPE html>
