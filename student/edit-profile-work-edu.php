@@ -3,20 +3,20 @@
 	
 <head>
 		
-		<title>Edit Profile | Change My Password</title>
+		<title>Edit Profile | Work and Education</title>
 
     <!-- Stylesheets
     ================================================= -->
-		<link rel="stylesheet" href="css/bootstrap.min.css" />
-		<link rel="stylesheet" href="css/style.css" />
-		<link rel="stylesheet" href="css/ionicons.min.css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/ionicons.min.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" />
     
     <!--Google Font-->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
     
     <!--Favicon-->
-    <link rel="shortcut icon" type="image/png" href="images/fav.png"/>
+    <link rel="shortcut icon" type="image/png" href="../images/fav.png"/>
 	</head>
   <body>
 
@@ -34,24 +34,24 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index-registeradmin.html"><img src="images/logo.png" alt="logo" /></a>
+            <a class="navbar-brand" href="index-registeradmin.php"><img src="images/logo.png" alt="logo" /></a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right main-menu">
-              <li class="dropdown">
+              <!-- <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span><img src="images/down-arrow.png" alt="" /></span></a>
                   <ul class="dropdown-menu newsfeed-home">
-                    <li><a href="index.html">sign in</a></li>
-                    <li><a href="index-registeradmin.html">sign up</a></li>
+                    <li><a href="index.php">sign in</a></li>
+                    <li><a href="index-registeradmin.php">sign up</a></li>
                   </ul>
-              </li>
+              </li> -->
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Newsfeed <span><img src="images/down-arrow.png" alt="" /></span></a>
                   <ul class="dropdown-menu newsfeed-home">
-                    <li><a href="newsfeed.html">Newsfeed</a></li>
-                    <li><a href="newsfeed-people-nearby.html">Poeple Nearly</a></li>
+                    <li><a href="newsfeed.php">Newsfeed</a></li>
+                    <li><a href="newsfeed-people-nearby.php">Poeple Nearly</a></li>
                     <li><a href="newsfeed-friends.html">My friends</a></li>
                     <li><a href="newsfeed-messages.html">Chatroom</a></li>
                     <li><a href="newsfeed-images.html">Images</a></li>
@@ -62,18 +62,19 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Timeline <span><img src="images/down-arrow.png" alt="" /></span></a>
                 <ul class="dropdown-menu login">
                   <li><a href="timeline.html">Timeline</a></li>
-                  <li><a href="timeline-about.html">Timeline About</a></li>
-                  <li><a href="timeline-album.html">Timeline Album</a></li>
-                  <li><a href="timeline-friends.html">Timeline Friends</a></li>
-                  <li><a href="edit-profile-basic.html">Edit: Basic Info</a></li>
-                  <li><a href="edit-profile-work-edu.html">Edit: Work</a></li>
-                  <li><a href="edit-profile-interests.html">Edit: Interests</a></li>
-                  <li><a href="edit-profile-settings.html">Account Settings</a></li>
-                  <li><a href="edit-profile-password.html">Change Password</a></li>
+                  <!-- <li><a href="timeline-about.html">Timeline About</a></li>
+                  <li><a href="timeline-album.php">Timeline Album</a></li>
+                  <li><a href="timeline-friends.php">Timeline Friends</a></li> -->
+                  <li><a href="edit-profile-basic.php">Edit: Basic Info</a></li>
+                  <li><a href="edit-profile-work-edu.php">Edit: Work</a></li>
+                  <li><a href="edit-profile-interests.php">Edit: Interests</a></li>
+                  <li><a href="edit-profile-settings.php">Account Settings</a></li>
+                  <li><a href="edit-profile-password.php">Change Password</a></li>
                 </ul>
               </li>
-              
-              <li class="dropdown"><a href="contact.html">Contact</a></li>
+            
+              <li class="dropdown"><a href="contact.php">Contact</a></li>
+              <li class="dropdown"><a href="php/logout.php">logout</a></li>
             </ul>
             <form class="navbar-form navbar-right hidden-sm">
               <div class="form-group">
@@ -107,7 +108,7 @@
               <div class="col-md-9">
                 <ul class="list-inline profile-menu">
                   <li><a href="timeline.html">Timeline</a></li>
-                  <li><a href="timeline-about.html" class="active">About</a></li>
+                  <li><a href="edit-profile-basic.php" class="active">About</a></li>
                   <li><a href="timeline-album.html">Album</a></li>
                   <li><a href="timeline-friends.html">Friends</a></li>
                 </ul>
@@ -144,43 +145,100 @@
               
               <!--Edit Profile Menu-->
               <ul class="edit-menu">
-              	<li><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.html">Basic Information</a></li>
-              	<li><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.html">My Interests</a></li>
-                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.html">Account Settings</a></li>
-              	<li class="active"><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.html">Change Password</a></li>
+              	<li class="active"><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.php">Basic Information</a></li>
+              	<li><i class="icon ion-ios-briefcase-outline"></i><a href="edit-profile-work-edu.php">Education And Work</a></li>
+              	<li><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.php">My Interests</a></li>
+                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.php">Account Settings</a></li>
+              	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.php">Change Password</a></li>
               </ul>
             </div>
             <div class="col-md-7">
 
-              <!-- Change Password
+              <!-- Edit Work and Education
               ================================================= -->
               <div class="edit-profile-container">
                 <div class="block-title">
-                  <h4 class="grey"><i class="icon ion-ios-locked-outline"></i>Change Password</h4>
+                  <h4 class="grey"><i class="icon ion-ios-book-outline"></i>My education</h4>
                   <div class="line"></div>
                   <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">
-                  <form name="update-pass" id="education" class="form-inline">
+                  <form name="education" id="education" class="form-inline">
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="my-password">Old password</label>
-                        <input id="my-password" class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Old password"/>
+                        <label for="school">My university</label>
+                        <input id="school" class="form-control input-group-lg" type="text" name="school" title="Enter School" placeholder="My School" value="Harvard Unversity" />
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-6">
-                        <label>New password</label>
-                        <input class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="New password"/>
+                        <label for="date-from">From</label>
+                        <input id="date-from" class="form-control input-group-lg" type="text" name="date" title="Enter a Date" placeholder="from" value="2012" />
                       </div>
                       <div class="form-group col-xs-6">
-                        <label>Confirm password</label>
-                        <input class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Confirm password"/>
+                        <label for="date-to" class="">To</label>
+                        <input id="date-to" class="form-control input-group-lg" type="text" name="date" title="Enter a Date" placeholder="to" value="2016" />
                       </div>
                     </div>
-                    <p><a href="#">Forgot Password?</a></p>
-                    <button class="btn btn-primary">Update Password</button>
+                    <div class="row">
+                      <div class="form-group col-xs-12">
+                        <label for="edu-description">Description</label>
+                        <textarea id="edu-description" name="description" class="form-control" placeholder="Some texts about my education" rows="4" cols="400">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</textarea>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-xs-12">
+                        <label for="graduate">Graduated?:-</label>
+                        <input id="graduate" type="checkbox" name="graduate" value="graduate" checked> Yes!! 
+                      </div>
+                    </div>
+                    <button class="btn btn-primary">Save Changes</button>
+                  </form>
+                </div>
+                <div class="block-title">
+                  <h4 class="grey"><i class="icon ion-ios-briefcase-outline"></i>Work Experiences</h4>
+                  <div class="line"></div>
+                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
+                  <div class="line"></div>
+                </div>
+                <div class="edit-block">
+                  <form name="work" id="work" class="form-inline">
+                    <div class="row">
+                      <div class="form-group col-xs-12">
+                        <label for="company">Company</label>
+                        <input id="company" class="form-control input-group-lg" type="text" name="company" title="Enter Company" placeholder="Company name" value="Envato Inc" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-xs-12">
+                        <label for="designation">Designation</label>
+                        <input id="designation" class="form-control input-group-lg" type="text" name="designation" title="Enter designation" placeholder="designation name" value="Exclusive Author" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-xs-6">
+                        <label for="from-date">From</label>
+                        <input id="from-date" class="form-control input-group-lg" type="text" name="date" title="Enter a Date" placeholder="from" value="2016" />
+                      </div>
+                      <div class="form-group col-xs-6">
+                        <label for="to-date" class="">To</label>
+                        <input id="to-date" class="form-control input-group-lg" type="text" name="date" title="Enter a Date" placeholder="to" value="Present" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-xs-12">
+                        <label for="work-city">City/Town</label>
+                        <input id="work-city" class="form-control input-group-lg" type="text" name="city" title="Enter city" placeholder="Your city" value="Melbourne"/>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-xs-12">
+                        <label for="work-description">Description</label>
+                        <textarea id="work-description" name="description" class="form-control" placeholder="Some texts about my work" rows="4" cols="400">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</textarea>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary">Save Changes</button>
                   </form>
                 </div>
               </div>
@@ -188,8 +246,32 @@
             <div class="col-md-2 static">
               
               <!--Sticky Timeline Activity Sidebar-->
-              
-              
+              <div id="sticky-sidebar">
+                <h4 class="grey">Sarah's activity</h4>
+                <div class="feed-item">
+                  <div class="live-activity">
+                    <p><a href="#" class="profile-link">Sarah</a> Commended on a Photo</p>
+                    <p class="text-muted">5 mins ago</p>
+                  </div>
+                </div>
+                <div class="feed-item">
+                  <div class="live-activity">
+                    <p><a href="#" class="profile-link">Sarah</a> Has posted a photo</p>
+                    <p class="text-muted">an hour ago</p>
+                  </div>
+                </div>
+                <div class="feed-item">
+                  <div class="live-activity">
+                    <p><a href="#" class="profile-link">Sarah</a> Liked her friend's post</p>
+                    <p class="text-muted">4 hours ago</p>
+                  </div>
+                </div>
+                <div class="feed-item">
+                  <div class="live-activity">
+                    <p><a href="#" class="profile-link">Sarah</a> has shared an album</p>
+                    <p class="text-muted">a day ago</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -217,8 +299,8 @@
             <div class="col-md-2 col-sm-2">
               <h5>For individuals</h5>
               <ul class="footer-links">
-                <li><a href="index-registerstudent.html">Signup</a></li>
-                <li><a href="index-registeradmin.html">login</a></li>
+                <li><a href="index-registerstudent.php">Signup</a></li>
+                <li><a href="index-registeradmin.php">login</a></li>
                 <li><a href="#">Explore</a></li>
                 <li><a href="#">Features</a></li>
                 <li><a href="contact.html">contact</a></li>
@@ -227,7 +309,7 @@
             <div class="col-md-2 col-sm-2">
               <h5>For Recruiters</h5>
               <ul class="footer-links">
-                <li><a href="index-registerrecruiter.html">Recruiter signup</a></li>
+                <li><a href="index-registerrecruiter.php">Recruiter signup</a></li>
                 <li><a href="contact.html"></a>Contact</li>
                 <li><a href="#">Features</a></li>
                 <li><a href="#">Explore</a></li>
@@ -265,14 +347,14 @@
       <div class="spinner"></div>
     </div>
     
-  
+    
     <!-- Scripts
     ================================================= -->
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.sticky-kit.min.js"></script>
-    <script src="js/jquery.scrollbar.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.sticky-kit.min.js"></script>
+    <script src="../js/jquery.scrollbar.min.js"></script>
+    <script src="../js/script.js"></script>
     
   </body>
 

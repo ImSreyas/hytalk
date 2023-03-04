@@ -3,24 +3,23 @@
 	
 <head>
 		
-		<title>404 Error | Nothing found !</title>
+		<title>Edit Profile | My Interests</title>
 
     <!-- Stylesheets
     ================================================= -->
-		<link rel="stylesheet" href="css/bootstrap.min.css" />
-		<link rel="stylesheet" href="css/style.css" />
-		<link rel="stylesheet" href="css/ionicons.min.css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
-
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/ionicons.min.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" />
+    
     <!--Google Font-->
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
-
+    
     <!--Favicon-->
-    <link rel="shortcut icon" type="image/png" href="images/fav.png"/>
+    <link rel="shortcut icon" type="image/png" href="../images/fav.png"/>
 	</head>
   <body>
-  
+
     <!-- Header
     ================================================= -->
 		<header id="header">
@@ -35,19 +34,19 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index-registeradmin.php"><img src="images/logo.png" alt="logo" /></a>
+            <a class="navbar-brand" href="index-register.html"><img src="images/logo.png" alt="logo" /></a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right main-menu">
-               <!-- <li class="dropdown">
+              <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span><img src="images/down-arrow.png" alt="" /></span></a>
                   <ul class="dropdown-menu newsfeed-home">
-                    <li><a href="index.php">sign up</a></li>
-                    <li><a href="index-registeradmin.php">sign in</a></li>
+                    <li><a href="index.php">Landing Page 1</a></li>
+                    <li><a href="index-register.html">Landing Page 2</a></li>
                   </ul>
-              </li> -->
+              </li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Newsfeed <span><img src="images/down-arrow.png" alt="" /></span></a>
                   <ul class="dropdown-menu newsfeed-home">
@@ -76,6 +75,8 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">All Pages <span><img src="images/down-arrow.png" alt="" /></span></a>
                 <ul class="dropdown-menu page-list">
+                  <li><a href="index.php">Landing Page 1</a></li>
+                  <li><a href="index-register.html">Landing Page 2</a></li>
                   <li><a href="newsfeed.php">Newsfeed</a></li>
                   <li><a href="newsfeed-people-nearby.php">Poeple Nearly</a></li>
                   <li><a href="newsfeed-friends.html">My friends</a></li>
@@ -89,6 +90,7 @@
                   <li><a href="edit-profile-basic.php">Edit Profile</a></li>
                   <li><a href="contact.html">Contact Us</a></li>
                   <li><a href="faq.html">FAQ Page</a></li>
+                  <li><a href="404.html">404 Not Found</a></li>
                 </ul>
               </li>
               <li class="dropdown"><a href="contact.php">Contact</a></li>
@@ -105,28 +107,115 @@
       </nav>
     </header>
     <!--Header End-->
-  
-    <!-- 404 Error
-    ================================================= -->
-    <div class="error-page">
-      <div class="error-content">
-        <div class="container">
-          <img src="images/404.png" alt="" class="img-responsive" />
-          <div class="error-message">
-          	<h1 class="error-title">Whoops!</h1>
-          	<p>Looks like you are lost. But don't worry there is plenty to see!!</p>
-          </div>
-          <form class="search-form">
-            <div class="form-group">
-              <label for="search_content">Search Content!</label>
-              <input id="search_content" type="text" class="form-control" value="" placeholder="Search what you want to find...">
+
+    <div class="container">
+
+      <!-- Timeline
+      ================================================= -->
+      <div class="timeline">
+        <div class="timeline-cover">
+ <!--Timeline Menu for Large Screens-->
+      <div class="timeline-nav-bar hidden-sm hidden-xs">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="profile-info">
+              <img src="images/users/user-1.jpg" alt="" class="img-responsive profile-photo" />
+              <h3>Prem Ambro</h3>
+              <p class="text-muted">Student</p>
             </div>
-            <button type="submit" class="btn btn-primary">Search Now!</button>
-          </form>
+          </div>
+          <div class="col-md-9">
+            <ul class="list-inline profile-menu">
+              <li><a href="timeline.html">Timeline</a></li>
+              <li><a href="edit-profile-basic.php" class="active">About</a></li>
+              <li><a href="timeline-album.html">Album</a></li>
+              <li><a href="timeline-friends.html">Friends</a></li>
+            </ul>
+            <ul class="follow-me list-inline">
+              <li>789 people following him</li>
+              <li><button class="btn-primary">Add Friend</button></li>
+            </ul>
+          </div>
         </div>
-    	</div>
+      </div><!--Timeline Menu for Large Screens End-->
+
+      <!--Timeline Menu for Small Screens-->
+      <div class="navbar-mobile hidden-lg hidden-md">
+        <div class="profile-info">
+          <img src="images/users/user-1.jpg" alt="" class="img-responsive profile-photo" />
+          <h4>Prem Ambro</h4>
+          <p class="text-muted">Student</p>
+        </div>
+        <div class="mobile-menu">
+          <ul class="list-inline">
+            <li><a href="timline.html">Timeline</a></li>
+            <li><a href="edit-profile-basic.php" class="active">About</a></li>
+            <li><a href="timeline-album.html">Album</a></li>
+            <li><a href="timeline-friends.html">Friends</a></li>
+          </ul>
+          <button class="btn-primary">Add Friend</button>
+        </div>
+      </div><!--Timeline Menu for Small Screens End-->
+
+        </div>
+        <div id="page-contents">
+          <div class="row">
+            <div class="col-md-3">
+              
+              <!--Edit Profile Menu-->
+              <ul class="edit-menu">
+              	<li><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.php">Basic Information</a></li>
+              	
+              	<li class="active"><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.php">My Interests</a></li>
+                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.php">Account Settings</a></li>
+              	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.php">Change Password</a></li>
+              </ul>
+            </div>
+            <div class="col-md-7">
+
+              <!-- Edit Interests
+              ================================================= -->
+              <div class="edit-profile-container">
+                <div class="block-title">
+                  <h4 class="grey"><i class="icon ion-ios-heart-outline"></i>My Interests</h4>
+                  <div class="line"></div>
+                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
+                  <div class="line"></div>
+                </div>
+                <div class="edit-block">
+                  <ul class="list-inline interests">
+                  	<li><a href="#"><i class="icon ion-android-bicycle"></i> Bycicle</a></li>
+                  	<li><a href="#"><i class="icon ion-ios-camera"></i> Photgraphy</a></li>
+                  	<li><a href="#"><i class="icon ion-android-cart"></i> Shopping</a></li>
+                  	<li><a href="#"><i class="icon ion-android-plane"></i> Traveling</a></li>
+                  	<li><a href="#"><i class="icon ion-android-restaurant"></i> Eating</a></li>
+                  </ul>
+                  <div class="line"></div>
+                  <div class="row">
+                    <p class="custom-label"><strong>Add interests</strong></p>
+                    <div class="form-group col-sm-8">
+                      <input id="add-interest" class="form-control input-group-lg" type="text" name="interest" title="Choose Interest" placeholder="Interests. For example, photography"/>
+                    </div>
+                    <div class="form-group col-sm-4">
+                      <button class="btn btn-primary">Add</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 static">
+              
+              
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    
+
+
     <!-- Footer
     ================================================= -->
     <footer id="footer">
@@ -193,13 +282,15 @@
     <div id="spinner-wrapper">
       <div class="spinner"></div>
     </div>
-    
-    
+   
     <!-- Scripts
     ================================================= -->
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.sticky-kit.min.js"></script>
+    <script src="../js/jquery.scrollbar.min.js"></script>
+    <script src="../js/script.js"></script>
+    
   </body>
 
 </html>

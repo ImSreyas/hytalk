@@ -3,20 +3,20 @@
 	
 <head>
 		
-		<title>Edit Profile | My Interests</title>
+		<title>Edit Profile | Change My Password</title>
 
     <!-- Stylesheets
     ================================================= -->
-		<link rel="stylesheet" href="css/bootstrap.min.css" />
-		<link rel="stylesheet" href="css/style.css" />
-		<link rel="stylesheet" href="css/ionicons.min.css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/ionicons.min.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" />
     
     <!--Google Font-->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
     
     <!--Favicon-->
-    <link rel="shortcut icon" type="image/png" href="images/fav.png"/>
+    <link rel="shortcut icon" type="image/png" href="../images/fav.png"/>
 	</head>
   <body>
 
@@ -34,24 +34,24 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index-register.html"><img src="images/logo.png" alt="logo" /></a>
+            <a class="navbar-brand" href="index-registeradmin.php"><img src="images/logo.png" alt="logo" /></a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right main-menu">
-              <li class="dropdown">
+              <!-- <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span><img src="images/down-arrow.png" alt="" /></span></a>
                   <ul class="dropdown-menu newsfeed-home">
-                    <li><a href="index.html">Landing Page 1</a></li>
-                    <li><a href="index-register.html">Landing Page 2</a></li>
+                    <li><a href="index.php">sign in</a></li>
+                    <li><a href="index-registeradmin.php">sign up</a></li>
                   </ul>
-              </li>
+              </li> -->
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Newsfeed <span><img src="images/down-arrow.png" alt="" /></span></a>
                   <ul class="dropdown-menu newsfeed-home">
-                    <li><a href="newsfeed.html">Newsfeed</a></li>
-                    <li><a href="newsfeed-people-nearby.html">Poeple Nearly</a></li>
+                    <li><a href="newsfeed.php">Newsfeed</a></li>
+                    <li><a href="newsfeed-people-nearby.php">Poeple Nearly</a></li>
                     <li><a href="newsfeed-friends.html">My friends</a></li>
                     <li><a href="newsfeed-messages.html">Chatroom</a></li>
                     <li><a href="newsfeed-images.html">Images</a></li>
@@ -62,38 +62,19 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Timeline <span><img src="images/down-arrow.png" alt="" /></span></a>
                 <ul class="dropdown-menu login">
                   <li><a href="timeline.html">Timeline</a></li>
-                  <li><a href="timeline-about.html">Timeline About</a></li>
-                  <li><a href="timeline-album.html">Timeline Album</a></li>
-                  <li><a href="timeline-friends.html">Timeline Friends</a></li>
-                  <li><a href="edit-profile-basic.html">Edit: Basic Info</a></li>
-                  <li><a href="edit-profile-work-edu.html">Edit: Work</a></li>
-                  <li><a href="edit-profile-interests.html">Edit: Interests</a></li>
-                  <li><a href="edit-profile-settings.html">Account Settings</a></li>
-                  <li><a href="edit-profile-password.html">Change Password</a></li>
+                  <!-- <li><a href="timeline-about.html">Timeline About</a></li>
+                  <li><a href="timeline-album.php">Timeline Album</a></li>
+                  <li><a href="timeline-friends.php">Timeline Friends</a></li> -->
+                  <li><a href="edit-profile-basic.php">Edit: Basic Info</a></li>
+                  <li><a href="edit-profile-work-edu.php">Edit: Work</a></li>
+                  <li><a href="edit-profile-interests.php">Edit: Interests</a></li>
+                  <li><a href="edit-profile-settings.php">Account Settings</a></li>
+                  <li><a href="edit-profile-password.php">Change Password</a></li>
                 </ul>
               </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">All Pages <span><img src="images/down-arrow.png" alt="" /></span></a>
-                <ul class="dropdown-menu page-list">
-                  <li><a href="index.html">Landing Page 1</a></li>
-                  <li><a href="index-register.html">Landing Page 2</a></li>
-                  <li><a href="newsfeed.html">Newsfeed</a></li>
-                  <li><a href="newsfeed-people-nearby.html">Poeple Nearly</a></li>
-                  <li><a href="newsfeed-friends.html">My friends</a></li>
-                  <li><a href="newsfeed-messages.html">Chatroom</a></li>
-                  <li><a href="newsfeed-images.html">Images</a></li>
-                  <li><a href="newsfeed-videos.html">Videos</a></li>
-                  <li><a href="timeline.html">Timeline</a></li>
-                  <li><a href="timeline-about.html">Timeline About</a></li>
-                  <li><a href="timeline-album.html">Timeline Album</a></li>
-                  <li><a href="timeline-friends.html">Timeline Friends</a></li>
-                  <li><a href="edit-profile-basic.html">Edit Profile</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
-                  <li><a href="faq.html">FAQ Page</a></li>
-                  <li><a href="404.html">404 Not Found</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="contact.html">Contact</a></li>
+              
+              <li class="dropdown"><a href="contact.php">Contact</a></li>
+              <li class="dropdown"><a href="php/logout.php">logout</a></li>
             </ul>
             <form class="navbar-form navbar-right hidden-sm">
               <div class="form-group">
@@ -113,48 +94,49 @@
       ================================================= -->
       <div class="timeline">
         <div class="timeline-cover">
- <!--Timeline Menu for Large Screens-->
-      <div class="timeline-nav-bar hidden-sm hidden-xs">
-        <div class="row">
-          <div class="col-md-3">
+
+          <!--Timeline Menu for Large Screens-->
+          <div class="timeline-nav-bar hidden-sm hidden-xs">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="profile-info">
+                  <img src="images/users/user-1.jpg" alt="" class="img-responsive profile-photo" />
+                  <h3>Prem Ambro</h3>
+                  <p class="text-muted">Student</p>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <ul class="list-inline profile-menu">
+                  <li><a href="timeline.html">Timeline</a></li>
+                  <li><a href="timeline-about.html" class="active">About</a></li>
+                  <li><a href="timeline-album.html">Album</a></li>
+                  <li><a href="timeline-friends.html">Friends</a></li>
+                </ul>
+                <ul class="follow-me list-inline">
+                  <li>789 people following him</li>
+                  <li><button class="btn-primary">Add Friend</button></li>
+                </ul>
+              </div>
+            </div>
+          </div><!--Timeline Menu for Large Screens End-->
+
+          <!--Timeline Menu for Small Screens-->
+          <div class="navbar-mobile hidden-lg hidden-md">
             <div class="profile-info">
               <img src="images/users/user-1.jpg" alt="" class="img-responsive profile-photo" />
-              <h3>Prem Ambro</h3>
+              <h4>Prem Ambro</h4>
               <p class="text-muted">Student</p>
             </div>
-          </div>
-          <div class="col-md-9">
-            <ul class="list-inline profile-menu">
-              <li><a href="timeline.html">Timeline</a></li>
-              <li><a href="edit-profile-basic.html" class="active">About</a></li>
-              <li><a href="timeline-album.html">Album</a></li>
-              <li><a href="timeline-friends.html">Friends</a></li>
-            </ul>
-            <ul class="follow-me list-inline">
-              <li>789 people following him</li>
-              <li><button class="btn-primary">Add Friend</button></li>
-            </ul>
-          </div>
-        </div>
-      </div><!--Timeline Menu for Large Screens End-->
-
-      <!--Timeline Menu for Small Screens-->
-      <div class="navbar-mobile hidden-lg hidden-md">
-        <div class="profile-info">
-          <img src="images/users/user-1.jpg" alt="" class="img-responsive profile-photo" />
-          <h4>Prem Ambro</h4>
-          <p class="text-muted">Student</p>
-        </div>
-        <div class="mobile-menu">
-          <ul class="list-inline">
-            <li><a href="timline.html">Timeline</a></li>
-            <li><a href="edit-profile-basic.html" class="active">About</a></li>
-            <li><a href="timeline-album.html">Album</a></li>
-            <li><a href="timeline-friends.html">Friends</a></li>
-          </ul>
-          <button class="btn-primary">Add Friend</button>
-        </div>
-      </div><!--Timeline Menu for Small Screens End-->
+            <div class="mobile-menu">
+              <ul class="list-inline">
+                <li><a href="timline.html">Timeline</a></li>
+                <li><a href="timeline-about.html" class="active">About</a></li>
+                <li><a href="timeline-album.html">Album</a></li>
+                <li><a href="timeline-friends.html">Friends</a></li>
+              </ul>
+              <button class="btn-primary">Add Friend</button>
+            </div>
+          </div><!--Timeline Menu for Small Screens End-->
 
         </div>
         <div id="page-contents">
@@ -163,50 +145,52 @@
               
               <!--Edit Profile Menu-->
               <ul class="edit-menu">
-              	<li><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.html">Basic Information</a></li>
-              	
-              	<li class="active"><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.html">My Interests</a></li>
-                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.html">Account Settings</a></li>
-              	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.html">Change Password</a></li>
+              	<li><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.php">Basic Information</a></li>
+              	<li><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.php">My Interests</a></li>
+                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.php">Account Settings</a></li>
+              	<li class="active"><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.php">Change Password</a></li>
               </ul>
             </div>
             <div class="col-md-7">
 
-              <!-- Edit Interests
+              <!-- Change Password
               ================================================= -->
               <div class="edit-profile-container">
                 <div class="block-title">
-                  <h4 class="grey"><i class="icon ion-ios-heart-outline"></i>My Interests</h4>
+                  <h4 class="grey"><i class="icon ion-ios-locked-outline"></i>Change Password</h4>
                   <div class="line"></div>
                   <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">
-                  <ul class="list-inline interests">
-                  	<li><a href="#"><i class="icon ion-android-bicycle"></i> Bycicle</a></li>
-                  	<li><a href="#"><i class="icon ion-ios-camera"></i> Photgraphy</a></li>
-                  	<li><a href="#"><i class="icon ion-android-cart"></i> Shopping</a></li>
-                  	<li><a href="#"><i class="icon ion-android-plane"></i> Traveling</a></li>
-                  	<li><a href="#"><i class="icon ion-android-restaurant"></i> Eating</a></li>
-                  </ul>
-                  <div class="line"></div>
-                  <div class="row">
-                    <p class="custom-label"><strong>Add interests</strong></p>
-                    <div class="form-group col-sm-8">
-                      <input id="add-interest" class="form-control input-group-lg" type="text" name="interest" title="Choose Interest" placeholder="Interests. For example, photography"/>
+                  <form name="update-pass" id="education" class="form-inline">
+                    <div class="row">
+                      <div class="form-group col-xs-12">
+                        <label for="my-password">Old password</label>
+                        <input id="my-password" class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Old password"/>
+                      </div>
                     </div>
-                    <div class="form-group col-sm-4">
-                      <button class="btn btn-primary">Add</button>
+                    <div class="row">
+                      <div class="form-group col-xs-6">
+                        <label>New password</label>
+                        <input class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="New password"/>
+                      </div>
+                      <div class="form-group col-xs-6">
+                        <label>Confirm password</label>
+                        <input class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Confirm password"/>
+                      </div>
                     </div>
-                  </div>
+                    <p><a href="#">Forgot Password?</a></p>
+                    <button class="btn btn-primary">Update Password</button>
+                  </form>
                 </div>
               </div>
             </div>
             <div class="col-md-2 static">
               
+              <!--Sticky Timeline Activity Sidebar-->
               
-                  </div>
-                </div>
+              
               </div>
             </div>
           </div>
@@ -234,8 +218,8 @@
             <div class="col-md-2 col-sm-2">
               <h5>For individuals</h5>
               <ul class="footer-links">
-                <li><a href="index-registerstudent.html">Signup</a></li>
-                <li><a href="index-registeradmin.html">login</a></li>
+                <li><a href="index-registerstudent.php">Signup</a></li>
+                <li><a href="index-registeradmin.php">login</a></li>
                 <li><a href="#">Explore</a></li>
                 <li><a href="#">Features</a></li>
                 <li><a href="contact.html">contact</a></li>
@@ -244,7 +228,7 @@
             <div class="col-md-2 col-sm-2">
               <h5>For Recruiters</h5>
               <ul class="footer-links">
-                <li><a href="index-registerrecruiter.html">Recruiter signup</a></li>
+                <li><a href="index-registerrecruiter.php">Recruiter signup</a></li>
                 <li><a href="contact.html"></a>Contact</li>
                 <li><a href="#">Features</a></li>
                 <li><a href="#">Explore</a></li>
@@ -281,14 +265,15 @@
     <div id="spinner-wrapper">
       <div class="spinner"></div>
     </div>
-   
+    
+  
     <!-- Scripts
     ================================================= -->
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.sticky-kit.min.js"></script>
-    <script src="js/jquery.scrollbar.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.sticky-kit.min.js"></script>
+    <script src="../js/jquery.scrollbar.min.js"></script>
+    <script src="../js/script.js"></script>
     
   </body>
 

@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$userListArray = $userList->fetch_assoc();
 		if($userListArray['Password'] == $password){
 			$_SESSION['student_id'] = $userListArray['id'];
-			header('location:student/index.php');
+			header('location:student/newsfeed.php');
 		} else {
 			$msg = 'invalid password';
 		}
@@ -71,10 +71,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign up <span><img src="images/down-arrow.png" alt="" /></span></a>
                   <ul class="dropdown-menu newsfeed-home">
                     <li><a href="index-registerstudent.php">Sign up</a></li>
-                    <li><a href="index-registeradmin.html"> sign in/signup</a></li>
+                    <li><a href="index-registeradmin.php"> sign in/signup</a></li>
                   </ul>
               </li>
-              <li class="dropdown"><a href="contact.html">Contact</a></li>
+              <li class="dropdown"><a href="contact.php">Contact</a></li>
+              <li class="dropdown"><a href="php/logout.php">logout</a></li>
             </ul>
             <form class="navbar-form navbar-right hidden-sm">
               <div class="form-group">
@@ -299,7 +300,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
               <h5>For individuals</h5>
               <ul class="footer-links">
                 <li><a href="index-registerstudent.php">Signup</a></li>
-                <li><a href="index-registeradmin.html">login</a></li>
+                <li><a href="index-registeradmin.php">login</a></li>
                 <li><a href="#">Explore</a></li>
                 <li><a href="#">Features</a></li>
                 <li><a href="contact.html">contact</a></li>
@@ -308,7 +309,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="col-md-2 col-sm-2">
               <h5>For Recruiters</h5>
               <ul class="footer-links">
-                <li><a href="index-registerrecruiter.html">Recruiter signup</a></li>
+                <li><a href="index-registerrecruiter.php">Recruiter signup</a></li>
                 <li><a href="contact.html"></a>Contact</li>
                 <li><a href="#">Features</a></li>
                 <li><a href="#">Explore</a></li>

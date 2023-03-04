@@ -42,46 +42,47 @@ if(!isset($_SESSION['student_id'])){
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index-registeradmin.html"><img src="images/logo.png" alt="logo" /></a>
+            <a class="navbar-brand" href="index-registeradmin.php"><img src="images/logo.png" alt="logo" /></a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right main-menu">
-              <li class="dropdown">
+              <!-- <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span><img src="images/down-arrow.png" alt="" /></span></a>
                   <ul class="dropdown-menu newsfeed-home">
                     <li><a href="index.php">sign in</a></li>
-                    <li><a href="index-registeradmin.html">sign up</a></li>
+                    <li><a href="index-registeradmin.php">sign up</a></li>
                   </ul>
-              </li>
+              </li> -->
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Newsfeed <span><img src="images/down-arrow.png" alt="" /></span></a>
                   <ul class="dropdown-menu newsfeed-home">
-                    <li><a href="newsfeed.html">Newsfeed</a></li>
-                    <li><a href="newsfeed-people-nearby.html">Poeple Nearly</a></li>
-                    <li><a href="newsfeed-friends.html">My friends</a></li>
-                    <li><a href="newsfeed-messages.html">Chatroom</a></li>
-                    <li><a href="newsfeed-images.html">Images</a></li>
-                    <li><a href="newsfeed-videos.html">Videos</a></li>
+                    <li><a href="newsfeed.php">Newsfeed</a></li>
+                    <li><a href="newsfeed-people-nearby.php">Poeple Nearly</a></li>
+                    <li><a href="newsfeed-friends.php">My friends</a></li>
+                    <li><a href="newsfeed-messages.php">Chatroom</a></li>
+                    <li><a href="newsfeed-images.php">Images</a></li>
+                    <li><a href="newsfeed-videos.php">Videos</a></li>
                   </ul>
               </li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Timeline <span><img src="images/down-arrow.png" alt="" /></span></a>
                 <ul class="dropdown-menu login">
-                  <li><a href="timeline.html">Timeline</a></li>
+                  <li><a href="timeline.php">Timeline</a></li>
                   <li><a href="timeline-about.html">Timeline About</a></li>
-                  <li><a href="timeline-album.html">Timeline Album</a></li>
-                  <li><a href="timeline-friends.html">Timeline Friends</a></li>
-                  <li><a href="edit-profile-basic.html">Edit: Basic Info</a></li>
-                  <li><a href="edit-profile-work-edu.html">Edit: Work</a></li>
-                  <li><a href="edit-profile-interests.html">Edit: Interests</a></li>
-                  <li><a href="edit-profile-settings.html">Account Settings</a></li>
-                  <li><a href="edit-profile-password.html">Change Password</a></li>
+                  <li><a href="timeline-album.php">Timeline Album</a></li>
+                  <li><a href="timeline-friends.php">Timeline Friends</a></li>
+                  <li><a href="edit-profile-basic.php">Edit: Basic Info</a></li>
+                  <li><a href="edit-profile-work-edu.php">Edit: Work</a></li>
+                  <li><a href="edit-profile-interests.php">Edit: Interests</a></li>
+                  <li><a href="edit-profile-settings.php">Account Settings</a></li>
+                  <li><a href="edit-profile-password.php">Change Password</a></li>
                 </ul>
               </li>
              
-              <li class="dropdown"><a href="contact.html">Contact</a></li>
+              <li class="dropdown"><a href="contact.php">Contact</a></li>
+              <li class="dropdown"><a href="php/logout.php">logout</a></li>
             </ul>
             <form class="navbar-form navbar-right hidden-sm">
               <div class="form-group">
@@ -114,10 +115,10 @@ if(!isset($_SESSION['student_id'])){
               </div>
               <div class="col-md-9">
                 <ul class="list-inline profile-menu">
-                  <li><a href="timeline.html">Timeline</a></li>
+                  <li><a href="timeline.php">Timeline</a></li>
                   <li><a href="timeline-about.html">About</a></li>
-                  <li><a href="timeline-album.html" class="active">Album</a></li>
-                  <li><a href="timeline-friends.html">Friends</a></li>
+                  <li><a href="timeline-album.php" class="active">Album</a></li>
+                  <li><a href="timeline-friends.php">Friends</a></li>
                 </ul>
                 <ul class="follow-me list-inline">
                   <li>899 people following you</li>
@@ -138,8 +139,8 @@ if(!isset($_SESSION['student_id'])){
               <ul class="list-inline">
                 <li><a href="timline.html">Timeline</a></li>
                 <li><a href="timeline-about.html">About</a></li>
-                <li><a href="timeline-album.html" class="active">Album</a></li>
-                <li><a href="timeline-friends.html">Friends</a></li>
+                <li><a href="timeline-album.php" class="active">Album</a></li>
+                <li><a href="timeline-friends.php">Friends</a></li>
               </ul>
               <button class="btn-primary">Add Friends</button>
             </div>
@@ -319,7 +320,7 @@ if(!isset($_SESSION['student_id'])){
               <h5>For individuals</h5>
               <ul class="footer-links">
                 <li><a href="index-registerstudent.php">Signup</a></li>
-                <li><a href="index-registeradmin.html">login</a></li>
+                <li><a href="index-registeradmin.php">login</a></li>
                 <li><a href="#">Explore</a></li>
                 <li><a href="#">Features</a></li>
                 <li><a href="contact.html">contact</a></li>
@@ -328,7 +329,7 @@ if(!isset($_SESSION['student_id'])){
             <div class="col-md-2 col-sm-2">
               <h5>For Recruiters</h5>
               <ul class="footer-links">
-                <li><a href="index-registerrecruiter.html">Recruiter signup</a></li>
+                <li><a href="index-registerrecruiter.php">Recruiter signup</a></li>
                 <li><a href="contact.html"></a>Contact</li>
                 <li><a href="#">Features</a></li>
                 <li><a href="#">Explore</a></li>

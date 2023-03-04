@@ -43,46 +43,47 @@ if(!isset($_SESSION['student_id'])){
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index-registeradmin.html"><img src="images/logo.png" alt="logo" /></a>
+            <a class="navbar-brand" href="index-registeradmin.php"><img src="images/logo.png" alt="logo" /></a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right main-menu">
-              <li class="dropdown">
+              <!-- <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span><img src="images/down-arrow.png" alt="" /></span></a>
                   <ul class="dropdown-menu newsfeed-home">
                     <li><a href="index.php">sign in</a></li>
-                    <li><a href="index-registeradmin.html">sign up</a></li>
+                    <li><a href="index-registeradmin.php">sign up</a></li>
                   </ul>
-              </li>
+              </li> -->
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Newsfeed <span><img src="images/down-arrow.png" alt="" /></span></a>
                   <ul class="dropdown-menu newsfeed-home">
-                    <li><a href="newsfeed.html">Newsfeed</a></li>
-                    <li><a href="newsfeed-people-nearby.html">Poeple Nearly</a></li>
-                    <li><a href="newsfeed-friends.html">My friends</a></li>
-                    <li><a href="newsfeed-messages.html">Chatroom</a></li>
-                    <li><a href="newsfeed-images.html">Images</a></li>
-                    <li><a href="newsfeed-videos.html">Videos</a></li>
+                    <li><a href="newsfeed.php">Newsfeed</a></li>
+                    <li><a href="newsfeed-people-nearby.php">Poeple Nearly</a></li>
+                    <li><a href="newsfeed-friends.php">My friends</a></li>
+                    <li><a href="newsfeed-messages.php">Chatroom</a></li>
+                    <li><a href="newsfeed-images.php">Images</a></li>
+                    <li><a href="newsfeed-videos.php">Videos</a></li>
                   </ul>
               </li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Timeline <span><img src="images/down-arrow.png" alt="" /></span></a>
                 <ul class="dropdown-menu login">
-                  <li><a href="timeline.html">Timeline</a></li>
+                  <li><a href="timeline.php">Timeline</a></li>
                   <li><a href="timeline-about.html">Timeline About</a></li>
-                  <li><a href="timeline-album.html">Timeline Album</a></li>
-                  <li><a href="timeline-friends.html">Timeline Friends</a></li>
-                  <li><a href="edit-profile-basic.html">Edit: Basic Info</a></li>
-                  <li><a href="edit-profile-work-edu.html">Edit: Work</a></li>
-                  <li><a href="edit-profile-interests.html">Edit: Interests</a></li>
-                  <li><a href="edit-profile-settings.html">Account Settings</a></li>
-                  <li><a href="edit-profile-password.html">Change Password</a></li>
+                  <li><a href="timeline-album.php">Timeline Album</a></li>
+                  <li><a href="timeline-friends.php">Timeline Friends</a></li>
+                  <li><a href="edit-profile-basic.php">Edit: Basic Info</a></li>
+                  <li><a href="edit-profile-work-edu.php">Edit: Work</a></li>
+                  <li><a href="edit-profile-interests.php">Edit: Interests</a></li>
+                  <li><a href="edit-profile-settings.php">Account Settings</a></li>
+                  <li><a href="edit-profile-password.php">Change Password</a></li>
                 </ul>
               </li>
               
-              <li class="dropdown"><a href="contact.html">Contact</a></li>
+              <li class="dropdown"><a href="contact.php">Contact</a></li>
+              <li class="dropdown"><a href="php/logout.php">logout</a></li>
             </ul>
             <form class="navbar-form navbar-right hidden-sm">
               <div class="form-group">
@@ -102,35 +103,7 @@ if(!isset($_SESSION['student_id'])){
 
     			<!-- Newsfeed Common Side Bar Left
           ================================================= -->
-    			<div class="col-md-3" style="position:static;">
-            <div class="profile-card">
-            	<img src="images/users/user-1.jpg" alt="user" class="profile-photo" />
-            	<h5><a href="timeline.html" class="text-white">Prince</a></h5>
-            	<a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 976 followers</a>
-            </div><!--profile card ends-->
-            <ul class="nav-news-feed">
-              <li><i class="icon ion-ios-paper"></i><div><a href="newsfeed.html">My Newsfeed</a></div></li>
-              <li><i class="icon ion-ios-people"></i><div><a href="newsfeed-people-nearby.html">People Nearby</a></div></li>
-              <li><i class="icon ion-ios-people-outline"></i><div><a href="newsfeed-friends.html">Friends</a></div></li>
-              <li><i class="icon ion-chatboxes"></i><div><a href="newsfeed-messages.html">Messages</a></div></li>
-              <li><i class="icon ion-images"></i><div><a href="newsfeed-images.html">Images</a></div></li>
-              <li><i class="icon ion-ios-videocam"></i><div><a href="newsfeed-videos.html">Videos</a></div></li>
-            </ul><!--news-feed links ends-->
-            <div id="chat-block">
-              <div class="title">Chat online</div>
-              <ul class="online-users list-inline">
-                <li><a href="newsfeed-messages.html" title="Justin"><img src="images/users/user-2.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.html" title="Alan"><img src="images/users/user-3.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.html" title="Amal"><img src="images/users/user-4.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="enwsfeed-messages.html" title="Treesa"><img src="images/users/user-5.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.html" title="Arun"><img src="images/users/user-6.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.html" title="Aravind"><img src="images/users/user-7.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.html" title="Darlene"><img src="images/users/user-8.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.html" title="Elliot"><img src="images/users/user-9.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.html" title="Clay"><img src="images/users/user-10.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-              </ul>
-            </div><!--chat block ends-->
-          </div>
+    			<?php include('static/left-side-bar.php'); ?>
     			<div class="col-md-7">
 
             <!-- Post Create Box
@@ -168,7 +141,7 @@ if(!isset($_SESSION['student_id'])){
                       <img src="images/users/user-3.jpg" alt="user" class="profile-photo-lg" />
                       <div class="friend-info">
                         <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timeline.html" class="profile-link">Treesa</a></h5>
+                      	<h5><a href="timeline.php" class="profile-link">Treesa</a></h5>
                       	<p>Student</p>
                       </div>
                     </div>
@@ -181,7 +154,7 @@ if(!isset($_SESSION['student_id'])){
                       <img src="images/users/user-4.jpg" alt="user" class="profile-photo-lg" />
                       <div class="friend-info">
                         <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timeline.html" class="profile-link">Alan</a></h5>
+                      	<h5><a href="timeline.php" class="profile-link">Alan</a></h5>
                       	<p>Student</p>
                       </div>
                     </div>
@@ -193,7 +166,7 @@ if(!isset($_SESSION['student_id'])){
                   	<div class="card-info">
                       <img src="images/users/user-10.jpg" alt="user" class="profile-photo-lg" />
                       <div class="friend-info">
-                        <a href="timeline.html" class="pull-right text-green">My Friend</a>
+                        <a href="timeline.php" class="pull-right text-green">My Friend</a>
                       	<h5><a href="#" class="profile-link">Elliot</a></h5>
                       	<p>Recruiter</p>
                       </div>
@@ -220,7 +193,7 @@ if(!isset($_SESSION['student_id'])){
                       <img src="images/users/user-8.jpg" alt="user" class="profile-photo-lg" />
                       <div class="friend-info">
                         <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timeline.html" class="profile-link">Infosys</a></h5>
+                      	<h5><a href="timeline.php" class="profile-link">Infosys</a></h5>
                       	<p>Company</p>
                       </div>
                     </div>
@@ -233,7 +206,7 @@ if(!isset($_SESSION['student_id'])){
                       <img src="images/users/user-2.jpg" alt="user" class="profile-photo-lg" />
                       <div class="friend-info">
                         <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timeline.html" class="profile-link">Arun</a></h5>
+                      	<h5><a href="timeline.php" class="profile-link">Arun</a></h5>
                       	<p>Recruiter</p>
                       </div>
                     </div>
@@ -246,7 +219,7 @@ if(!isset($_SESSION['student_id'])){
                       <img src="images/users/user-9.jpg" alt="user" class="profile-photo-lg" />
                       <div class="friend-info">
                         <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timeline.html" class="profile-link">Anjaly</a></h5>
+                      	<h5><a href="timeline.php" class="profile-link">Anjaly</a></h5>
                       	<p>Recruiter</p>
                       </div>
                     </div>
@@ -259,7 +232,7 @@ if(!isset($_SESSION['student_id'])){
                       <img src="images/users/user-6.jpg" alt="user" class="profile-photo-lg" />
                       <div class="friend-info">
                         <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timeline.html" class="profile-link">Justin</a></h5>
+                      	<h5><a href="timeline.php" class="profile-link">Justin</a></h5>
                       	<p>Student</p>
                       </div>
                     </div>
@@ -272,7 +245,7 @@ if(!isset($_SESSION['student_id'])){
                       <img src="images/users/user-5.jpg" alt="user" class="profile-photo-lg" />
                       <div class="friend-info">
                         <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timeline.html" class="profile-link">Clay Jensen</a></h5>
+                      	<h5><a href="timeline.php" class="profile-link">Clay Jensen</a></h5>
                       	<p>Student</p>
                       </div>
                     </div>
@@ -290,35 +263,35 @@ if(!isset($_SESSION['student_id'])){
               <div class="follow-user">
                 <img src="images/users/user-11.jpg" alt="" class="profile-photo-sm pull-left" />
                 <div>
-                  <h5><a href="timeline.html">Holland</a></h5>
+                  <h5><a href="timeline.php">Holland</a></h5>
                   <a href="#" class="text-green">Add friend</a>
                 </div>
               </div>
               <div class="follow-user">
                 <img src="images/users/user-12.jpg" alt="" class="profile-photo-sm pull-left" />
                 <div>
-                  <h5><a href="timeline.html">Cris Evans</a></h5>
+                  <h5><a href="timeline.php">Cris Evans</a></h5>
                   <a href="#" class="text-green">Add friend</a>
                 </div>
               </div>
               <div class="follow-user">
                 <img src="images/users/user-13.jpg" alt="" class="profile-photo-sm pull-left" />
                 <div>
-                  <h5><a href="timeline.html">Brian Lara</a></h5>
+                  <h5><a href="timeline.php">Brian Lara</a></h5>
                   <a href="#" class="text-green">Add friend</a>
                 </div>
               </div>
               <div class="follow-user">
                 <img src="images/users/user-14.jpg" alt="" class="profile-photo-sm pull-left" />
                 <div>
-                  <h5><a href="timeline.html">Modri</a></h5>
+                  <h5><a href="timeline.php">Modri</a></h5>
                   <a href="#" class="text-green">Add friend</a>
                 </div>
               </div>
               <div class="follow-user">
                 <img src="images/users/user-15.jpg" alt="" class="profile-photo-sm pull-left" />
                 <div>
-                  <h5><a href="timeline.html">Benzema</a></h5>
+                  <h5><a href="timeline.php">Benzema</a></h5>
                   <a href="#" class="text-green">Add friend</a>
                 </div>
               </div>
@@ -348,7 +321,7 @@ if(!isset($_SESSION['student_id'])){
               <h5>For individuals</h5>
               <ul class="footer-links">
                 <li><a href="index-registerstudent.php">Signup</a></li>
-                <li><a href="index-registeradmin.html">login</a></li>
+                <li><a href="index-registeradmin.php">login</a></li>
                 <li><a href="#">Explore</a></li>
                 <li><a href="#">Features</a></li>
                 <li><a href="contact.html">contact</a></li>
@@ -357,7 +330,7 @@ if(!isset($_SESSION['student_id'])){
             <div class="col-md-2 col-sm-2">
               <h5>For Recruiters</h5>
               <ul class="footer-links">
-                <li><a href="index-registerrecruiter.html">Recruiter signup</a></li>
+                <li><a href="index-registerrecruiter.php">Recruiter signup</a></li>
                 <li><a href="contact.html"></a>Contact</li>
                 <li><a href="#">Features</a></li>
                 <li><a href="#">Explore</a></li>

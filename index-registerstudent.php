@@ -75,14 +75,15 @@ VALUES ('$firstname $lastname', '$semester', '$register_no', '$year-$month-$day'
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span><img src="images/down-arrow.png" alt="" /></span></a>
                   <ul class="dropdown-menu newsfeed-home">
                     <li><a href="index.php">Sign in</a></li>
-                    <li><a href="index-registeradmin.html">Login Admin</a></li>
+                    <li><a href="index-registeradmin.php">Login Admin</a></li>
                     <li><a href="index-registerstudent.php">Login Student</a></li>
-                    <li><a href="index-registerfaculty.html">Login Faculty</a></li>
-                    <li><a href="index-registerrecruiter.html">Login Recruiter</a></li>
+                    <li><a href="index-registerfaculty.php">Login Faculty</a></li>
+                    <li><a href="index-registerrecruiter.php">Login Recruiter</a></li>
                   </ul>
               </li>
               
-              <li class="dropdown"><a href="contact.html">Contact</a></li>
+              <li class="dropdown"><a href="contact.php">Contact</a></li>
+              <li class="dropdown"><a href="php/logout.php">logout</a></li>
             </ul>
             <form class="navbar-form navbar-right hidden-sm">
               <div class="form-group">
