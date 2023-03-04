@@ -1,0 +1,114 @@
+CREATE DATABASE IF NOT EXISTS Hytalk;
+USE Hytalk;
+
+CREATE TABLE admin (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE student (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  Name VARCHAR(50) NOT NULL,
+  semester VARCHAR(20) NOT NULL,
+  register_no VARCHAR(20),
+  Dob DATE NOT NULL,
+  Gender VARCHAR(10) NOT NULL,
+  Email VARCHAR(100) NOT NULL,
+  Student_pic VARCHAR(255),
+  Stream VARCHAR(50) NOT NULL,
+  Mobile_no VARCHAR(20) NOT NULL,
+  Username VARCHAR(50) NOT NULL,
+  Password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE faculty (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  Name VARCHAR(50) NOT NULL,
+  designation VARCHAR(50) NOT NULL,
+  Dob DATE NOT NULL,
+  Email VARCHAR(100) NOT NULL,
+  Faculty_pic VARCHAR(255),
+  Department VARCHAR(50) NOT NULL,
+  Mobile_no VARCHAR(20) NOT NULL,
+  Username VARCHAR(50),
+  Password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE recruiter (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  Name VARCHAR(50) NOT NULL,
+  Company_details VARCHAR(255) NOT NULL,
+  Email VARCHAR(100) NOT NULL,
+  recruiter_pic VARCHAR(255),
+  Designation VARCHAR(50) NOT NULL,
+  Mobile_no VARCHAR(20) NOT NULL,
+  Username VARCHAR(50),
+  Password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE message (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  send_id INT NOT NULL,
+  receive_id INT NOT NULL,
+  message VARCHAR(255) NOT NULL,
+  time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (id) REFERENCES admin(id) ON DELETE CASCADE,
+  FOREIGN KEY (id) REFERENCES student(id) ON DELETE CASCADE,
+  FOREIGN KEY (id) REFERENCES faculty(id) ON DELETE CASCADE,
+  FOREIGN KEY (id) REFERENCES recruiter(id) ON DELETE CASCADE
+);
+
+CREATE TABLE feed (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL,
+  upload_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  caption VARCHAR(255),
+  image VARCHAR(255),
+  video VARCHAR(255),
+  Article VARCHAR(255),
+  FOREIGN KEY (id) REFERENCES admin(id) ON DELETE CASCADE,
+  FOREIGN KEY (id) REFERENCES student(id) ON DELETE CASCADE,
+  FOREIGN KEY (id) REFERENCES faculty(id) ON DELETE CASCADE,
+  FOREIGN KEY (id) REFERENCES recruiter(id) ON DELETE CASCADE
+);
+
+CREATE TABLE notification (
+  Notification_id INT AUTO_INCREMENT PRIMARY KEY,
+  sender_id INT NOT NULL,
+  username VARCHAR(50) NOT NULL,
+  FOREIGN KEY (sender_id) REFERENCES admin(id) ON DELETE CASCADE,
+  FOREIGN KEY (sender_id) REFERENCES student(id) ON DELETE CASCADE,
+  FOREIGN KEY (sender_id) REFERENCES faculty(id) ON DELETE CASCADE,
+  FOREIGN KEY (sender_id) REFERENCES recruiter(id) ON DELETE CASCADE
+);
+
+CREATE TABLE Placement (
+  id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  recruiter_id INT(11) NOT NULL,
+  student_id INT(11) NOT NULL,
+  Company_details VARCHAR(255) NOT NULL,
+  designation VARCHAR(50) NOT NULL,
+  CONSTRAINT fk_placement_recruiter FOREIGN KEY (recruiter_id) REFERENCES recruiter(id),
+  CONSTRAINT fk_placement_student FOREIGN KEY (student_id) REFERENCES student(id)
+);
+
+CREATE TABLE friends (
+  id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  user_id INT(11) NOT NULL,
+  CONSTRAINT fk_friends_user FOREIGN KEY (user_id) REFERENCES student(id) ON DELETE CASCADE,
+  CONSTRAINT fk_friends_recruiter FOREIGN KEY (user_id) REFERENCES recruiter(id) ON DELETE CASCADE,
+  CONSTRAINT fk_friends_faculty FOREIGN KEY (user_id) REFERENCES faculty(id) ON DELETE CASCADE
+);
+
+CREATE TABLE album (
+  id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  user_id INT(11) NOT NULL,
+  image VARCHAR(255),
+  video VARCHAR(255),
+  designation VARCHAR(50),
+  CONSTRAINT fk_album_user FOREIGN KEY (user_id) REFERENCES student(id) ON DELETE CASCADE,
+  CONSTRAINT fk_album_recruiter FOREIGN KEY (user_id) REFERENCES recruiter(id) ON DELETE CASCADE,
+  CONSTRAINT fk_album_faculty FOREIGN KEY (user_id) REFERENCES faculty(id) ON DELETE CASCADE
+);
