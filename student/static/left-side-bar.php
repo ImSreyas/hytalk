@@ -12,13 +12,13 @@ $followingCount = mysqli_query($conn, "select * from friends where friend_id='$s
 </div><!--profile card ends-->
 <ul class="nav-news-feed">
     <li><i class="icon ion-ios-paper"></i><div><a href="newsfeed.php">My Newsfeed</a></div></li>
-    <li><i class="icon ion-ios-people"></i><div><a href="newsfeed-people-nearby.php">People Nearby</a></div></li>
+    <!-- <li><i class="icon ion-ios-people"></i><div><a href="newsfeed-people-nearby.php">People Nearby</a></div></li> -->
     <li><i class="icon ion-ios-people-outline"></i><div><a href="newsfeed-friends.php">Friends</a></div></li>
     <li><i class="icon ion-chatboxes"></i><div><a href="newsfeed-messages.php">Messages</a></div></li>
     <li><i class="icon ion-images"></i><div><a href="newsfeed-images.php">Images</a></div></li>
     <li><i class="icon ion-ios-videocam"></i><div><a href="newsfeed-videos.php">Videos</a></div></li>
 </ul><!--news-feed links ends-->
-<div id="chat-block">
+<!-- <div id="chat-block">
     <div class="title">Chat online</div>
     <ul class="online-users list-inline">
     <li><a href="newsfeed-messages.php" title="Justin"><img src="images/users/user-2.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
@@ -31,5 +31,5 @@ $followingCount = mysqli_query($conn, "select * from friends where friend_id='$s
     <li><a href="newsfeed-messages.php" title="Decaprio"><img src="images/users/user-9.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
     <li><a href="newsfeed-messages.php" title="Andrew"><img src="images/users/user-10.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
     </ul>
-</div><!--chat block ends-->
+</div>chat block ends -->
 </div>
