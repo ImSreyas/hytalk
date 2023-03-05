@@ -9,7 +9,7 @@ $recruiterList = mysqli_query($conn, "select * from recruiter");
 ?>
 <div class="col-md-2 static">
 <div class="suggestions" id="sticky-sidebar">
-    <h4 class="grey">Who to Follow</h4>
+    <h4 class="grey">Users</h4>
     <div class="follow-user-search-bar-container">
         <input type="text" onkeydown="search(this);" class="user-search" style="background-color: #472D2D;border-radius: 1.3rem;margin-bottom: 1rem;color: white;border: none; outline: none; padding: 1rem 2rem" placeholder="Search users">
     </div>

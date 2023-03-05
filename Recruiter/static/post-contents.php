@@ -1,8 +1,8 @@
 <?php 
 
-$current_user_id = $_SESSION['student_id'];
-$current_user_details = mysqli_query($conn, "select * from student where id='$current_user_id'")->fetch_assoc();
-$current_user_pic = $current_user_details['Student_pic'];
+// $current_user_id = $_SESSION['student_id'];
+// $current_user_details = mysqli_query($conn, "select * from student where id='$current_user_id'")->fetch_assoc();
+// $current_user_pic = $current_user_details['Student_pic'];
 
 if(isset($_POST['comment-btn'])){
     $comment_content = $_POST['comment-content'];
@@ -11,7 +11,8 @@ if(isset($_POST['comment-btn'])){
     mysqli_query($conn, "insert into comment set comment='$comment_content', post_id='$post_id_', commenter_id='$current_user_id', post_owner_id='$post_owner', commenter_type='student'");
 }
 
-$postContents = mysqli_query($conn, "select * from feed");
+$rec_Id=$Rec_Details['id'];
+$postContents = mysqli_query($conn, "select * from feed where user_type='recruiter' and user_id='$rec_Id'");
 while($p = $postContents->fetch_assoc()){
     $post_id = $p['id'];
     $post_owner_id = $p['user_id'];
@@ -106,7 +107,7 @@ while($p = $postContents->fetch_assoc()){
 
                 <div class="post-comment">
                     <form action="" method="POST" style="width: 100%">
-                        <img src="../<?php echo $current_user_pic; ?>" alt="" class="profile-photo-sm" />
+                        <img src="../<?php echo $Rec_Details['recruiter_pic']; ?>" alt="" class="profile-photo-sm" />
                         <input required type="text" class="form-control" name="comment-content" placeholder="Post a comment">
                         <input type="hidden" name='post-owner' value="<?php echo $post_owner_id; ?>"/>
                         <input type="hidden" name='post-id' value="<?php echo $post_id; ?>"/>

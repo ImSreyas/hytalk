@@ -60,8 +60,8 @@ if (!$video_fileName == "") {
 } else {
     $imageError = "*Select an image";
 }
-
-mysqli_query($conn, "insert into feed set user_id='$student_id', user_type='student', caption='$caption', article='$text', image='$image_fileDestination_new', video='$video_fileDestination_new'");
+$rec_Id=$Rec_Details['id'];
+mysqli_query($conn, "insert into feed set user_id='$rec_Id', user_type='recruiter', caption='$caption', article='$text', image='$image_fileDestination_new', video='$video_fileDestination_new'");
 }
 
 ?>
@@ -112,7 +112,7 @@ mysqli_query($conn, "insert into feed set user_id='$student_id', user_type='stud
 <div class="main-post-container">
     <form method="post" action="" enctype="multipart/form-data">
         <div class="first-row">
-        <img src="../<?php echo $student_pic; ?>" alt="" class="profile-photo-md" />
+        <img src="../<?php echo $Rec_Details['recruiter_pic']; ?>" alt="" class="profile-photo-md" />
         <input name='caption' placeholder="caption" class="caption-input-field" required>
         </div>
         <div class="second-row">
