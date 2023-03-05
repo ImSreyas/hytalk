@@ -11,6 +11,6 @@ if(mysqli_num_rows($checkExe) > 0){
     header('Location: ../Faculty/facultyPage.html');
 }else{
     $_SESSION['login_status'] = "fail";
-    header('Location: ../Faculty/index-registerfaculty.php');
+    header('Location: ../Faculty/index-registerfaculty.php#login');
 }
 ?>

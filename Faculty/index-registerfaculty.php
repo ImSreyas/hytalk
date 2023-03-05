@@ -10,6 +10,10 @@ if ($_SESSION['registration_status'] == "success") {
   $reg_error = true;
   unset($_SESSION['registration_status']);
 }
+if($_SESSION['login_status']=="fail"){
+  $log_fail=true;
+  unset($_SESSION['login_status']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -285,6 +289,15 @@ if ($_SESSION['registration_status'] == "success") {
                 <form name="Login_form" id='Login_form' action="Login.php" method="post">
                   <div class="row">
                     <div class="form-group col-xs-12">
+                  <?php 
+                   if (isset($log_fail)) {
+                    echo ' <div class="alert alert-danger" role="alert">
+                    Invalid login credentials !
+                  </div>';
+                  }
+                  ?>
+                   
+
                       <label for="my-email" class="sr-only">Email</label>
                       <input id="my-email" class="form-control input-group-lg" type="email" name="Email" title="Enter Email" placeholder="Your Email" required />
                     </div>
