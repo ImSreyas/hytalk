@@ -1,6 +1,76 @@
 <?php
 session_start();
 include('static/header.php');
+
+
+if(isset($_POST['update-btn'])) {
+  $firstname = $_POST['firstname'];
+  $lastname = $_POST['lastname'];
+  $email = $_POST['email'];
+  $register_no = $_POST['register'];
+  $password = $_POST['password'];
+  $mobile = $_POST['mobile_no'];
+  $day = $_POST['day'];
+  $month = $_POST['month'];
+  $year = $_POST['year'];
+  $gender = $_POST['optradio'];
+  $department = $_POST['Department'];
+  $semester = $_POST['Semester'];
+
+
+  $image = $_FILES['image'];
+  $image_fileName = $_FILES['image']['name'];
+  $image_fileTempName = $_FILES['image']['tmp_name'];
+  $image_fileSize = $_FILES['image']['size'];
+  $image_fileError = $_FILES['image']['error'];
+  $image_fileType = $_FILES['image']['type'];
+
+  $image_fileExt = explode('.', $image_fileName);
+  $image_fileActualExt = strtolower(end($image_fileExt));
+
+  $image_fileDestination_new = "";
+  if (!$image_fileName == "") {
+    if ($image_fileError === 0) {
+        if ($image_fileSize < 1000000000) {
+            $image_fileNewName = uniqid('', true) . "." . $image_fileActualExt;
+            $image_fileDestination = '../images/users/' . $image_fileNewName;
+            move_uploaded_file($image_fileTempName, $image_fileDestination);
+            $image_fileDestination_new = 'images/users/' . $image_fileNewName;
+        } else {
+            $imageError = "*Image size is too big";
+        }
+    } else {
+        $imageError = "*Some error occured.Please choose an image one more time.";
+    }
+} else {
+    $imageError = "*Select an image";
+}
+
+
+$queryTxt = 
+"
+UPDATE student
+SET 
+    Name = '$firstname $lastname',
+    semester = '$semester',
+    register_no = '$register_no',
+    Dob = '$year-$month-$day',
+    Student_pic = '$image_fileDestination_new',
+    Gender = '$gender',
+    Email = '$email',
+    Mobile_no = '$mobile',
+    Username = '$email',
+    Password = '$password',
+    Stream = '$department'
+WHERE
+    id ='$student_id'
+";
+  mysqli_query($conn, $queryTxt);
+}
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +126,7 @@ include('static/header.php');
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Newsfeed <span><img src="images/down-arrow.png" alt="" /></span></a>
                   <ul class="dropdown-menu newsfeed-home">
                     <li><a href="newsfeed.php">Newsfeed</a></li>
-                    <li><a href="newsfeed-people-nearby.php">Poeple Nearly</a></li>
+                    <!-- <li><a href="newsfeed-people-nearby.php">Poeple Nearly</a></li> -->
                     <li><a href="newsfeed-friends.html">My friends</a></li>
                     <li><a href="newsfeed-messages.html">Chatroom</a></li>
                     <li><a href="newsfeed-images.html">Images</a></li>
@@ -66,13 +136,13 @@ include('static/header.php');
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Timeline <span><img src="images/down-arrow.png" alt="" /></span></a>
                 <ul class="dropdown-menu login">
-                  <li><a href="timeline.html">Timeline</a></li>
-                  <!-- <li><a href="timeline-about.html">Timeline About</a></li>
+                  <li><a href="timeline.php">Timeline</a></li>
+                  <!-- <li><a href="edit-profile-basic.php">Timeline About</a></li>
                   <li><a href="timeline-album.php">Timeline Album</a></li>
                   <li><a href="timeline-friends.php">Timeline Friends</a></li> -->
                   <li><a href="edit-profile-basic.php">Edit: Basic Info</a></li>
-                  <li><a href="edit-profile-interests.php">Edit: Interests</a></li>
-                  <li><a href="edit-profile-settings.php">Account Settings</a></li>
+                  <!-- <li><a href="edit-profile-interests.php">Edit: Interests</a></li>
+                  <li><a href="edit-profile-settings.php">Account Settings</a></li> -->
                   <li><a href="edit-profile-password.php">Change Password</a></li>
                 </ul>
               </li>
@@ -105,20 +175,20 @@ include('static/header.php');
             <div class="row">
               <div class="col-md-3">
                 <div class="profile-info">
-                  <img src="images/users/user-1.jpg" alt="" class="img-responsive profile-photo" />
-                  <h3>Prem Ambro</h3>
+                  <img src="../<?php echo $student_pic; ?>" alt="" class="img-responsive profile-photo" />
+                  <h3><?php echo $student_name; ?></h3>
                   <p class="text-muted">Student</p>
                 </div>
               </div>
               <div class="col-md-9">
                 <ul class="list-inline profile-menu">
-                  <li><a href="timeline.html">Timeline</a></li>
+                  <li><a href="timeline.php">Timeline</a></li>
                   <li><a href="edit-profile-basic.php" class="active">About</a></li>
-                  <li><a href="timeline-album.html">Album</a></li>
-                  <li><a href="timeline-friends.html">Friends</a></li>
+                  <!-- <li><a href="timeline-album.html">Album</a></li>
+                  <li><a href="timeline-friends.html">Friends</a></li> -->
                 </ul>
                 <ul class="follow-me list-inline">
-                  <li>789 people following him</li>
+                  <li><?php echo $userFollowCount; ?> followers and <?php echo $userFollowingCount; ?> following</li>
                   <li><button class="btn-primary">Add Friend</button></li>
                 </ul>
               </div>
@@ -126,7 +196,7 @@ include('static/header.php');
           </div><!--Timeline Menu for Large Screens End-->
 
           <!--Timeline Menu for Small Screens-->
-          <div class="navbar-mobile hidden-lg hidden-md">
+          <!-- <div class="navbar-mobile hidden-lg hidden-md">
             <div class="profile-info">
               <img src="images/users/user-1.jpg" alt="" class="img-responsive profile-photo" />
               <h4>Prem Ambro</h4>
@@ -135,13 +205,13 @@ include('static/header.php');
             <div class="mobile-menu">
               <ul class="list-inline">
                 <li><a href="timline.html">Timeline</a></li>
-                <li><a href="timeline-about.html" class="active">About</a></li>
+                <li><a href="edit-profile-basic.php" class="active">About</a></li>
                 <li><a href="timeline-album.html">Album</a></li>
                 <li><a href="timeline-friends.html">Friends</a></li>
               </ul>
               <button class="btn-primary">Add Friend</button>
             </div>
-          </div><!--Timeline Menu for Small Screens End-->
+          </div> -->
 
         </div>
         <div id="page-contents">
@@ -151,8 +221,8 @@ include('static/header.php');
               <!--Edit Profile Menu-->
               <ul class="edit-menu">
               	<li class="active"><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.php">Basic Information</a></li>
-              	<li><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.php">My Interests</a></li>
-                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.php">Account Settings</a></li>
+              	<!-- <li><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.php">My Interests</a></li>
+                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.php">Account Settings</a></li> -->
               	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.php">Change Password</a></li>
               </ul>
             </div>
@@ -164,34 +234,47 @@ include('static/header.php');
                 <div class="block-title">
                   <h4 class="grey"><i class="icon ion-android-checkmark-circle"></i>Edit basic information</h4>
                   <div class="line"></div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus nobis quaerat fuga rerum atque 
-                    tempora quis error earum quo. Aliquid cumque fuga debitis iusto odit, eaque optio quidem quo dicta.</p>
+                  <p>change the information if there is some error or change.</p>
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">
-                  <form name="basic-info" id="basic-info" class="form-inline">
+                  <form name="registration_form" id='registration_form' class="form-inline" action="" method="post" enctype="multipart/form-data">
                     <div class="row">
                       <div class="form-group col-xs-6">
-                        <label for="firstname">First name</label>
-                        <input id="firstname" class="form-control input-group-lg" type="text" name="firstname" title="Enter first name" placeholder="First name"/>
+                        <label for="firstname" class="sr-only">First Name</label>
+                        <input required id="firstname" class="form-control input-group-lg" type="text" name="firstname" title="Enter first name" placeholder="First name"/>
                       </div>
                       <div class="form-group col-xs-6">
-                        <label for="lastname" class="">Last name</label>
-                        <input id="lastname" class="form-control input-group-lg" type="text" name="lastname" title="Enter last name" placeholder="Last name" />
+                        <label for="lastname" class="sr-only">Last Name</label>
+                        <input required id="lastname" class="form-control input-group-lg" type="text" name="lastname" title="Enter last name" placeholder="Last name"/>
                       </div>
                     </div>
                     <div class="row">
-                      <div class="form-group col-xs-12">
-                        <label for="email">My email</label>
-                        <input id="email" class="form-control input-group-lg" type="text" name="Email" title="Enter Email" placeholder="My Email"/>
+                      <div class="form-group col-xs-6">
+                        <label for="email" class="sr-only">Email</label>
+                        <input required id="email" class="form-control input-group-lg" type="text" name="email" title="Enter your email" placeholder="Email"/>
+                      </div>
+                      <div class="form-group col-xs-6">
+                        <label for="register" class="sr-only">Register n.o</label>
+                        <input required id="register" class="form-control input-group-lg" type="number" name="register" title="Enter your reg n.o" placeholder="Register n.o"/>
                       </div>
                     </div>
                     <div class="row">
-                      <p class="custom-label"><strong>Date of Birth</strong></p>
+                        <div class="form-group col-xs-6">
+                            <label for="password" class="sr-only">Password</label>
+                            <input required id="password" class="form-control input-group-lg" type="password" name="password" title="Enter your password" placeholder="Password"/>
+                          </div>
+                          <div class="form-group col-xs-6">
+                            <label for="mobile n.o" class="sr-only">Mobile n.o</label>
+                            <input required id="mobile n.o" class="form-control input-group-lg" type="number" name="mobile_no" title="Enter your mob n.o" placeholder="Mobile n.o"/>
+                          </div>
+                    </div>
+                    <div class="row">
+                      <p class="birth"><strong>Date of Birth</strong></p>
                       <div class="form-group col-sm-3 col-xs-6">
                         <label for="month" class="sr-only"></label>
-                        <select class="form-control" id="day">
-                          <option value="Day">Day</option>
+                        <select required class="form-control" id="day" name="day">
+                          <option value="Day" disabled selected>Day</option>
                           <option>1</option>
                           <option>2</option>
                           <option>3</option>
@@ -210,7 +293,7 @@ include('static/header.php');
                           <option>16</option>
                           <option>17</option>
                           <option>18</option>
-                          <option selected>19</option>
+                          <option>19</option>
                           <option>20</option>
                           <option>21</option>
                           <option>22</option>
@@ -227,32 +310,31 @@ include('static/header.php');
                       </div>
                       <div class="form-group col-sm-3 col-xs-6">
                         <label for="month" class="sr-only"></label>
-                        <select class="form-control" id="month">
-                          <option value="month">Month</option>
-                          <option>Jan</option>
-                          <option>Feb</option>
-                          <option>Mar</option>
-                          <option>Apr</option>
-                          <option>May</option>
-                          <option>Jun</option>
-                          <option>Jul</option>
-                          <option>Aug</option>
-                          <option>Sep</option>
-                          <option>Oct</option>
-                          <option>Nov</option>
-                          <option selected>Dec</option>
+                        <select required class="form-control" id="month" name="month">
+                          <option value="1">Jan</option>
+                          <option value="2">Feb</option>
+                          <option value="3">Mar</option>
+                          <option value="4">Apr</option>
+                          <option value="5">May</option>
+                          <option value="6">Jun</option>
+                          <option value="7">Jul</option>
+                          <option value="8">Aug</option>
+                          <option value="9">Sep</option>
+                          <option value="10">Oct</option>
+                          <option value="11">Nov</option>
+                          <option value="12">Dec</option>
                         </select>
                       </div>
                       <div class="form-group col-sm-6 col-xs-12">
                         <label for="year" class="sr-only"></label>
-                        <select class="form-control" id="year">
-                          <option value="year">Year</option>
+                        <select required class="form-control" id="year" name="year">
+                          <option value="year" disabled selected>Year</option>
                           <option>1995</option>
                           <option>1996</option>
                           <option>1997</option>
                           <option>1998</option>
                           <option>1999</option>
-                          <option selected>2000</option>
+                          <option>2000</option>
                           <option>2001</option>
                           <option>2002</option>
                           <option>2004</option>
@@ -268,42 +350,46 @@ include('static/header.php');
                       </div>
                     </div>
                     <div class="form-group gender">
-                      <span class="custom-label"><strong>I am a: </strong></span>
                       <label class="radio-inline">
-                        <input type="radio" name="optradio" checked>Male
+                        <input required type="radio" name="optradio" checked value="male">male
                       </label>
                       <label class="radio-inline">
-                        <input type="radio" name="optradio">Female
+                        <input required type="radio" name="optradio" value="female">female
                       </label>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-6">
-                        <label for="Batch"> Batch</label>
-                        <input id="Batch" class="form-control input-group-lg" type="text" name="Batch" title="Enter Batch" placeholder="Your Batch"/>
-                      </div>
-                      <div class="form-group col-xs-6">
-                        <label for="country">Department</label>
-                        <select class="form-control" id="country">
-                          <option value="country">Department</option>
-                          <option value="AFG">Computer Science</option>
-                          <option value="ALA">Mathematics</option>
-                          <option value="ALB">Commerce </option>
-                          <option value="DZA">Bvoc</option>
-                          <option value="ASM">Economics</option>
-                          <option value="AND">History</option>
-                          <option value="AGO">Physics</option>
-                          <option value="AIA">Chemisty</option>
-           
+                        <label for="Department" class="sr-only"></label>
+                        <select required class="form-control" id="country" name="Department">
+                          <option value="Department" disabled selected>Department</option>
+                          <option value="Computer Science">Computer Science</option>
+                          <option value="Physics">Physics</option>
+                          <option value="Mathematics">Mathematics</option>
+                          <option value="Economics">Economics</option>
+                          <option value="Chemistry">Chemistry</option>
+                          <option value="History">History</option>
+                          <option value="Commerce">Commerce</option>
                         </select>
                       </div>
-                    </div>
-                    <div class="row">
-                      <div class="form-group col-xs-12">
-                        <label for="my-info">About me</label>
-                        <textarea id="my-info" name="information" class="form-control" placeholder="Some texts about me" rows="4" cols="400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur</textarea>
+                      <div class="form-group col-xs-6">
+                        <label for="Department" class="sr-only"></label>
+                        <select required class="form-control" id="country" name="Semester">
+                          <option value="Semester" disabled selected>Semester</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                        </select>
+                      </div>
+                      <div style="padding: 2rem;">profile pic : 
+                        <input type="file" name='image' />
                       </div>
                     </div>
-                    <button class="btn btn-primary">Save Changes</button>
+                    <button class="btn btn-primary" name="update-btn" type="submit">update</button>
                   </form>
                 </div>
               </div>
@@ -312,31 +398,6 @@ include('static/header.php');
               
               <!--Sticky Timeline Activity Sidebar-->
               <div id="sticky-sidebar">
-                <h4 class="grey">Prem's activity</h4>
-                <div class="feed-item">
-                  <div class="live-activity">
-                    <p><a href="#" class="profile-link">Prem</a> Commended on a Photo</p>
-                    <p class="text-muted">5 mins ago</p>
-                  </div>
-                </div>
-                <div class="feed-item">
-                  <div class="live-activity">
-                    <p><a href="#" class="profile-link">Prem</a> Has posted a photo</p>
-                    <p class="text-muted">an hour ago</p>
-                  </div>
-                </div>
-                <div class="feed-item">
-                  <div class="live-activity">
-                    <p><a href="#" class="profile-link">Prem</a> Liked his friend's post</p>
-                    <p class="text-muted">4 hours ago</p>
-                  </div>
-                </div>
-                <div class="feed-item">
-                  <div class="live-activity">
-                    <p><a href="#" class="profile-link">Prem</a> has shared an album</p>
-                    <p class="text-muted">a day ago</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

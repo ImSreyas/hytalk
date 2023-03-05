@@ -15,4 +15,11 @@ $student_email = $studentArray['Email'];
 $student_pic = $studentArray['Student_pic'];
 $student_stream = $studentArray['Stream'];
 $student_mobile = $studentArray['Mobile_no'];
+
+
+$userFollowersQuery = mysqli_query($conn, "select * from friends where user_id='$student_id'");
+$userFollowCount = $userFollowersQuery->num_rows;
+
+$userFollowingQuery = mysqli_query($conn , "select * from friends where  friend_id='$student_id'");
+$userFollowingCount = $userFollowingQuery->num_rows;
 ?>

@@ -1,6 +1,31 @@
 <?php
 session_start();
 include('static/header.php');
+
+
+
+
+if (isset($_POST['update-password'])) {
+  $old_password = $_POST['old-password'];
+  $new_password = $_POST['new-password'];
+  $confirm_password = $_POST['confirm-password'];
+
+  if(mysqli_query($conn, "select * from student where id='$student_id' && password='$old_password'")->num_rows > 0){
+    if($new_password == $confirm_password){
+      mysqli_query($conn, "update student set password='$confirm_password' where id='$student_id'");
+    } else {
+      ?> 
+      <script>alert('enter the same password...')</script>
+      <?php
+    }
+  } else {
+    ?> 
+    <script>alert('old password is wrong...')</script>
+    <?php
+  }
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +81,7 @@ include('static/header.php');
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Newsfeed <span><img src="images/down-arrow.png" alt="" /></span></a>
                   <ul class="dropdown-menu newsfeed-home">
                     <li><a href="newsfeed.php">Newsfeed</a></li>
-                    <li><a href="newsfeed-people-nearby.php">Poeple Nearly</a></li>
+                    <!-- <li><a href="newsfeed-people-nearby.php">Poeple Nearly</a></li> -->
                     <li><a href="newsfeed-friends.html">My friends</a></li>
                     <li><a href="newsfeed-messages.html">Chatroom</a></li>
                     <li><a href="newsfeed-images.html">Images</a></li>
@@ -66,14 +91,14 @@ include('static/header.php');
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Timeline <span><img src="images/down-arrow.png" alt="" /></span></a>
                 <ul class="dropdown-menu login">
-                  <li><a href="timeline.html">Timeline</a></li>
-                  <!-- <li><a href="timeline-about.html">Timeline About</a></li>
+                  <li><a href="timeline.php">Timeline</a></li>
+                  <!-- <li><a href="edit-profile-basic.php">Timeline About</a></li>
                   <li><a href="timeline-album.php">Timeline Album</a></li>
                   <li><a href="timeline-friends.php">Timeline Friends</a></li> -->
                   <li><a href="edit-profile-basic.php">Edit: Basic Info</a></li>
-                  <li><a href="edit-profile-work-edu.php">Edit: Work</a></li>
+                  <!-- <li><a href="edit-profile-work-edu.php">Edit: Work</a></li>
                   <li><a href="edit-profile-interests.php">Edit: Interests</a></li>
-                  <li><a href="edit-profile-settings.php">Account Settings</a></li>
+                  <li><a href="edit-profile-settings.php">Account Settings</a></li> -->
                   <li><a href="edit-profile-password.php">Change Password</a></li>
                 </ul>
               </li>
@@ -105,20 +130,20 @@ include('static/header.php');
             <div class="row">
               <div class="col-md-3">
                 <div class="profile-info">
-                  <img src="images/users/user-1.jpg" alt="" class="img-responsive profile-photo" />
-                  <h3>Prem Ambro</h3>
+                  <img src="../<?php echo $student_pic; ?>" alt="" class="img-responsive profile-photo" />
+                  <h3><?php echo $student_name; ?></h3>
                   <p class="text-muted">Student</p>
                 </div>
               </div>
               <div class="col-md-9">
                 <ul class="list-inline profile-menu">
-                  <li><a href="timeline.html">Timeline</a></li>
-                  <li><a href="timeline-about.html" class="active">About</a></li>
-                  <li><a href="timeline-album.html">Album</a></li>
-                  <li><a href="timeline-friends.html">Friends</a></li>
+                  <li><a href="timeline.php">Timeline</a></li>
+                  <li><a href="edit-profile-basic.php" class="active">About</a></li>
+                  <!-- <li><a href="timeline-album.html">Album</a></li>
+                  <li><a href="timeline-friends.html">Friends</a></li> -->
                 </ul>
                 <ul class="follow-me list-inline">
-                  <li>789 people following him</li>
+                  <li><?php echo $userFollowCount; ?> followers and <?php echo $userFollowingCount; ?> following</li>
                   <li><button class="btn-primary">Add Friend</button></li>
                 </ul>
               </div>
@@ -135,13 +160,13 @@ include('static/header.php');
             <div class="mobile-menu">
               <ul class="list-inline">
                 <li><a href="timline.html">Timeline</a></li>
-                <li><a href="timeline-about.html" class="active">About</a></li>
+                <li><a href="edit-profile-basic.php" class="active">About</a></li>
                 <li><a href="timeline-album.html">Album</a></li>
                 <li><a href="timeline-friends.html">Friends</a></li>
               </ul>
               <button class="btn-primary">Add Friend</button>
             </div>
-          </div><!--Timeline Menu for Small Screens End-->
+          </div>
 
         </div>
         <div id="page-contents">
@@ -151,8 +176,8 @@ include('static/header.php');
               <!--Edit Profile Menu-->
               <ul class="edit-menu">
               	<li><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.php">Basic Information</a></li>
-              	<li><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.php">My Interests</a></li>
-                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.php">Account Settings</a></li>
+              	<!-- <li><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.php">My Interests</a></li>
+                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.php">Account Settings</a></li> -->
               	<li class="active"><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.php">Change Password</a></li>
               </ul>
             </div>
@@ -168,26 +193,27 @@ include('static/header.php');
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">
-                  <form name="update-pass" id="education" class="form-inline">
+                  <form name="update-pass" id="education" class="form-inline" action="" method="post">
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="my-password">Old password</label>
-                        <input id="my-password" class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Old password"/>
+                        <input id="my-password" class="form-control input-group-lg" type="password" name="old-password" title="Enter password" placeholder="Old password" required/>
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-6">
                         <label>New password</label>
-                        <input class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="New password"/>
+                        <input class="form-control input-group-lg" type="password" name="new-password" title="Enter password" placeholder="New password" required/>
                       </div>
                       <div class="form-group col-xs-6">
                         <label>Confirm password</label>
-                        <input class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Confirm password"/>
+                        <input class="form-control input-group-lg" type="password" name="confirm-password" title="Enter password" placeholder="Confirm password" required/>
                       </div>
                     </div>
-                    <p><a href="#">Forgot Password?</a></p>
-                    <button class="btn btn-primary">Update Password</button>
+                    <p><a href="">Forgot Password?</a></p>
+                    <button class="btn btn-primary" type="submit" name='update-password'>Update Password</button>
                   </form>
+
                 </div>
               </div>
             </div>

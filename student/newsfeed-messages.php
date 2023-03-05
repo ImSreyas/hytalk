@@ -48,17 +48,10 @@ include('static/header.php');
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right main-menu">
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span><img src="images/down-arrow.png" alt="" /></span></a>
-                  <ul class="dropdown-menu newsfeed-home">
-                    <li><a href="index.php">Sign in</a></li>
-                    <li><a href="index-register.html">sign up</a></li>
-                  </ul>
-              </li>
-              <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Newsfeed <span><img src="images/down-arrow.png" alt="" /></span></a>
                   <ul class="dropdown-menu newsfeed-home">
                     <li><a href="newsfeed.php">Newsfeed</a></li>
-                    <li><a href="newsfeed-people-nearby.php">Poeple Nearly</a></li>
+                    <!-- <li><a href="newsfeed-people-nearby.php">Poeple Nearly</a></li> -->
                     <li><a href="newsfeed-friends.php">My friends</a></li>
                     <li><a href="newsfeed-messages.php">Chatroom</a></li>
                     <li><a href="newsfeed-images.php">Images</a></li>
@@ -69,13 +62,14 @@ include('static/header.php');
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Timeline <span><img src="images/down-arrow.png" alt="" /></span></a>
                 <ul class="dropdown-menu login">
                   <li><a href="timeline.php">Timeline</a></li>
-                  <li><a href="timeline-about.html">Timeline About</a></li>
+                  <!-- <li><a href="edit-profile-basic.php">Timeline About</a></li> -->
+                 <!-- <li><a href="edit-profile-basic.php">Timeline About</a></li>
                   <li><a href="timeline-album.php">Timeline Album</a></li>
-                  <li><a href="timeline-friends.php">Timeline Friends</a></li>
+                  <li><a href="timeline-friends.php">Timeline Friends</a></li> -->
                   <li><a href="edit-profile-basic.php">Edit: Basic Info</a></li>
-                  <li><a href="edit-profile-work-edu.php">Edit: Work</a></li>
+                  <!-- <li><a href="edit-profile-work-edu.php">Edit: Work</a></li>
                   <li><a href="edit-profile-interests.php">Edit: Interests</a></li>
-                  <li><a href="edit-profile-settings.php">Account Settings</a></li>
+                  <li><a href="edit-profile-settings.php">Account Settings</a></li> -->
                   <li><a href="edit-profile-password.php">Change Password</a></li>
                 </ul>
               </li>
@@ -106,27 +100,7 @@ include('static/header.php');
 
             <!-- Post Create Box
             ================================================= -->
-            <div class="create-post">
-            	<div class="row">
-            		<div class="col-md-7 col-sm-7">
-                  <div class="form-group">
-                    <img src="images/users/user-1.jpg" alt="" class="profile-photo-md" />
-                    <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
-                  </div>
-                </div>
-            		<div class="col-md-5 col-sm-5">
-                  <div class="tools">
-                    <ul class="publishing-tools list-inline">
-                      <li><a href="#"><i class="ion-compose"></i></a></li>
-                      <li><a href="#"><i class="ion-images"></i></a></li>
-                      <li><a href="#"><i class="ion-ios-videocam"></i></a></li>
-                      <li><a href="#"><i class="ion-map"></i></a></li>
-                    </ul>
-                    <button class="btn btn-primary pull-right">Publish</button>
-                  </div>
-                </div>
-            	</div>
-            </div><!-- Post Create Box End -->
+           <!-- Post Create Box End -->
 
             <!-- Chat Room
             ================================================= -->
@@ -158,14 +132,6 @@ include('static/header.php');
                   <?php include('static/chatContent.php') ?>
                   <!--Chat Messages in Right End-->
 
-                  <div class="send-message">
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Type your message">
-                      <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Send</button>
-                      </span>
-                    </div>
-                  </div>
                 </div>
                 <div class="clearfix"></div>
               </div>

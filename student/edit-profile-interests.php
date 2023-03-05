@@ -46,17 +46,10 @@ include('static/header.php');
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right main-menu">
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span><img src="images/down-arrow.png" alt="" /></span></a>
-                  <ul class="dropdown-menu newsfeed-home">
-                    <li><a href="index.php">Landing Page 1</a></li>
-                    <li><a href="index-register.html">Landing Page 2</a></li>
-                  </ul>
-              </li>
-              <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Newsfeed <span><img src="images/down-arrow.png" alt="" /></span></a>
                   <ul class="dropdown-menu newsfeed-home">
                     <li><a href="newsfeed.php">Newsfeed</a></li>
-                    <li><a href="newsfeed-people-nearby.php">Poeple Nearly</a></li>
+                    <!-- <li><a href="newsfeed-people-nearby.php">Poeple Nearly</a></li> -->
                     <li><a href="newsfeed-friends.html">My friends</a></li>
                     <li><a href="newsfeed-messages.html">Chatroom</a></li>
                     <li><a href="newsfeed-images.html">Images</a></li>
@@ -66,38 +59,18 @@ include('static/header.php');
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Timeline <span><img src="images/down-arrow.png" alt="" /></span></a>
                 <ul class="dropdown-menu login">
-                  <li><a href="timeline.html">Timeline</a></li>
-                  <!-- <li><a href="timeline-about.html">Timeline About</a></li>
+                  <li><a href="timeline.php">Timeline</a></li>
+                  <!-- <li><a href="edit-profile-basic.php">Timeline About</a></li>
                   <li><a href="timeline-album.php">Timeline Album</a></li>
                   <li><a href="timeline-friends.php">Timeline Friends</a></li> -->
                   <li><a href="edit-profile-basic.php">Edit: Basic Info</a></li>
-                  <li><a href="edit-profile-work-edu.php">Edit: Work</a></li>
+                  <!-- <li><a href="edit-profile-work-edu.php">Edit: Work</a></li>
                   <li><a href="edit-profile-interests.php">Edit: Interests</a></li>
-                  <li><a href="edit-profile-settings.php">Account Settings</a></li>
+                  <li><a href="edit-profile-settings.php">Account Settings</a></li> -->
                   <li><a href="edit-profile-password.php">Change Password</a></li>
                 </ul>
               </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">All Pages <span><img src="images/down-arrow.png" alt="" /></span></a>
-                <ul class="dropdown-menu page-list">
-                  <li><a href="index.php">Landing Page 1</a></li>
-                  <li><a href="index-register.html">Landing Page 2</a></li>
-                  <li><a href="newsfeed.php">Newsfeed</a></li>
-                  <li><a href="newsfeed-people-nearby.php">Poeple Nearly</a></li>
-                  <li><a href="newsfeed-friends.html">My friends</a></li>
-                  <li><a href="newsfeed-messages.html">Chatroom</a></li>
-                  <li><a href="newsfeed-images.html">Images</a></li>
-                  <li><a href="newsfeed-videos.html">Videos</a></li>
-                  <li><a href="timeline.html">Timeline</a></li>
-                  <!-- <li><a href="timeline-about.html">Timeline About</a></li>
-                  <li><a href="timeline-album.php">Timeline Album</a></li>
-                  <li><a href="timeline-friends.php">Timeline Friends</a></li> -->
-                  <li><a href="edit-profile-basic.php">Edit Profile</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
-                  <li><a href="faq.html">FAQ Page</a></li>
-                  <li><a href="404.html">404 Not Found</a></li>
-                </ul>
-              </li>
+              
               <li class="dropdown"><a href="contact.php">Contact</a></li>
               <li class="dropdown"><a href="php/logout.php">logout</a></li>
             </ul>
@@ -131,7 +104,7 @@ include('static/header.php');
           </div>
           <div class="col-md-9">
             <ul class="list-inline profile-menu">
-              <li><a href="timeline.html">Timeline</a></li>
+              <li><a href="timeline.php">Timeline</a></li>
               <li><a href="edit-profile-basic.php" class="active">About</a></li>
               <li><a href="timeline-album.html">Album</a></li>
               <li><a href="timeline-friends.html">Friends</a></li>
@@ -160,7 +133,7 @@ include('static/header.php');
           </ul>
           <button class="btn-primary">Add Friend</button>
         </div>
-      </div><!--Timeline Menu for Small Screens End-->
+      </div>
 
         </div>
         <div id="page-contents">
@@ -170,9 +143,6 @@ include('static/header.php');
               <!--Edit Profile Menu-->
               <ul class="edit-menu">
               	<li><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.php">Basic Information</a></li>
-              	
-              	<li class="active"><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.php">My Interests</a></li>
-                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.php">Account Settings</a></li>
               	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.php">Change Password</a></li>
               </ul>
             </div>
