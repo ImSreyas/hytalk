@@ -162,58 +162,6 @@ include('static/header.php');
                         </div>
                       </a>
                     </li>
-                    <li>
-                      <a href="#contact-3" data-toggle="tab">
-                        <div class="contact">
-                          <img src="images/users/user-3.jpg" alt="" class="profile-photo-sm pull-left"/>
-                          <div class="msg-preview">
-                            <h6>Arun</h6>
-                            <p class="text-muted">Okay fine. thank you</p>
-                            <small class="text-muted">13 hour ago</small>
-                            <div class="replied"><i class="icon ion-reply"></i></div>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#contact-4" data-toggle="tab">
-                        <div class="contact">
-                        	<img src="images/users/user-4.jpg" alt="" class="profile-photo-sm pull-left"/>
-                        	<div class="msg-preview">
-                        		<h6>Clay</h6>
-                        		<p class="text-muted">Hey, where were you ?</p>
-                            <small class="text-muted">Yesterday</small>
-                            <div class="chat-alert">1</div>
-                        	</div>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#contact-5" data-toggle="tab">
-                        <div class="contact">
-                          <img src="images/users/user-9.jpg" alt="" class="profile-photo-sm pull-left"/>
-                          <div class="msg-preview">
-                            <h6>Anna</h6>
-                            <p class="text-muted">I gotta go</p>
-                            <small class="text-muted">2 days ago</small>
-                            <div class="seen"><i class="icon ion-checkmark-round"></i></div>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#contact-6" data-toggle="tab">
-                        <div class="contact">
-                        	<img src="images/users/user-8.jpg" alt="" class="profile-photo-sm pull-left"/>
-                        	<div class="msg-preview">
-                        		<h6>Justin</h6>
-                        		<p class="text-muted">Hey</p>
-                            <small class="text-muted">2 days ago</small>
-                            <div class="chat-alert">1</div>
-                        	</div>
-                        </div>
-                      </a>
-                    </li>
                   </ul><!--Contact List in Left End-->
 
                 </div>

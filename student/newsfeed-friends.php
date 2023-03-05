@@ -105,7 +105,7 @@ include('static/header.php');
 
             <!-- Post Create Box
             ================================================= -->
-            <div class="create-post">
+            <!-- <div class="create-post">
             	<div class="row">
             		<div class="col-md-7 col-sm-7">
                   <div class="form-group">
@@ -125,129 +125,15 @@ include('static/header.php');
                   </div>
                 </div>
             	</div>
-            </div><!-- Post Create Box End -->
+            </div>Post Create Box End -->
 
             <!-- Friend List
             ================================================= -->
             <div class="friend-list">
-            	<div class="row">
-            		<div class="col-md-6 col-sm-6">
-                  <div class="friend-card">
-                  	<img src="images/covers/1.jpg" alt="profile-cover" class="img-responsive cover" />
-                  	<div class="card-info">
-                      <img src="images/users/user-3.jpg" alt="user" class="profile-photo-lg" />
-                      <div class="friend-info">
-                        <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timeline.php" class="profile-link">Treesa</a></h5>
-                      	<p>Student</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            		<div class="col-md-6 col-sm-6">
-                  <div class="friend-card">
-                  	<img src="images/covers/3.jpg" alt="profile-cover" class="img-responsive cover" />
-                  	<div class="card-info">
-                      <img src="images/users/user-4.jpg" alt="user" class="profile-photo-lg" />
-                      <div class="friend-info">
-                        <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timeline.php" class="profile-link">Alan</a></h5>
-                      	<p>Student</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                  <div class="friend-card">
-                  	<img src="images/covers/4.jpg" alt="profile-cover" class="img-responsive cover" />
-                  	<div class="card-info">
-                      <img src="images/users/user-10.jpg" alt="user" class="profile-photo-lg" />
-                      <div class="friend-info">
-                        <a href="timeline.php" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="#" class="profile-link">Elliot</a></h5>
-                      	<p>Recruiter</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                  <div class="friend-card">
-                  	<img src="images/covers/5.jpg" alt="profile-cover" class="img-responsive cover" />
-                  	<div class="card-info">
-                      <img src="images/users/user-7.jpg" alt="user" class="profile-photo-lg" />
-                      <div class="friend-info">
-                        <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timelime.html" class="profile-link">Tino</a></h5>
-                      	<p>Recruiter</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                  <div class="friend-card">
-                  	<img src="images/covers/6.jpg" alt="profile-cover" class="img-responsive cover" />
-                  	<div class="card-info">
-                      <img src="images/users/user-8.jpg" alt="user" class="profile-photo-lg" />
-                      <div class="friend-info">
-                        <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timeline.php" class="profile-link">Infosys</a></h5>
-                      	<p>Company</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                  <div class="friend-card">
-                  	<img src="images/covers/7.jpg" alt="profile-cover" class="img-responsive cover" />
-                  	<div class="card-info">
-                      <img src="images/users/user-2.jpg" alt="user" class="profile-photo-lg" />
-                      <div class="friend-info">
-                        <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timeline.php" class="profile-link">Arun</a></h5>
-                      	<p>Recruiter</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                  <div class="friend-card">
-                  	<img src="images/covers/8.jpg" alt="profile-cover" class="img-responsive cover" />
-                  	<div class="card-info">
-                      <img src="images/users/user-9.jpg" alt="user" class="profile-photo-lg" />
-                      <div class="friend-info">
-                        <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timeline.php" class="profile-link">Anjaly</a></h5>
-                      	<p>Recruiter</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                  <div class="friend-card">
-                  	<img src="images/covers/9.jpg" alt="profile-cover" class="img-responsive cover" />
-                  	<div class="card-info">
-                      <img src="images/users/user-6.jpg" alt="user" class="profile-photo-lg" />
-                      <div class="friend-info">
-                        <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timeline.php" class="profile-link">Justin</a></h5>
-                      	<p>Student</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                  <div class="friend-card">
-                  	<img src="images/covers/10.jpg" alt="profile-cover" class="img-responsive cover" />
-                  	<div class="card-info">
-                      <img src="images/users/user-5.jpg" alt="user" class="profile-photo-lg" />
-                      <div class="friend-info">
-                        <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timeline.php" class="profile-link">Clay Jensen</a></h5>
-                      	<p>Student</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            	<div class="row" style="padding-block: 1rem;">
+
+            		<?php include('static/friendsList.php'); ?>
+
             	</div>
             </div>
           </div>
