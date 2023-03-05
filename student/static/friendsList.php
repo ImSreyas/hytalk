@@ -6,17 +6,23 @@ while($friend = $friendList->fetch_assoc()){
     $friend_id = $friend['friend_id'];
     $friend_type = $friend['friend_type'];
     if($friend['friend_type'] == 'student'){
-        $post_owner_details = mysqli_query($conn, "select * from student where id='$friend_id'")->fetch_assoc();
-        $post_owner_name = $post_owner_details['Name'];
-        $post_owner_pic = $post_owner_details['Student_pic'];
+        $post_owner_details_ = mysqli_query($conn, "select * from student where id='$friend_id'");
+        if($post_owner_details = $post_owner_details_->fetch_assoc()){
+            $post_owner_name = $post_owner_details['Name'];
+            $post_owner_pic = $post_owner_details['Student_pic'];
+        }
     } else if($friend['friend_type'] == 'faculty'){
-        $post_owner_details = mysqli_query($conn, "select * from faculty where id='$friend_id'")->fetch_assoc();
-        $post_owner_name = $post_owner_details['Name'];
-        $post_owner_pic = $post_owner_details['Faculty_pic'];
+        $_post_owner_details = mysqli_query($conn, "select * from faculty where id='$friend_id'");
+        if($post_owner_details = $_post_owner_details->fetch_assoc()){
+            $post_owner_name = $post_owner_details['Name'];
+            $post_owner_pic = $post_owner_details['Faculty_pic'];
+            }
     } else {
-        $post_owner_details = mysqli_query($conn, "select * from recruiter where id='$friend_id'")->fetch_assoc();
-        $post_owner_name = $post_owner_details['Name'];
-        $post_owner_pic = $post_owner_details['recruiter_pic'];
+        $post_owner__details = mysqli_query($conn, "select * from recruiter where id='$friend_id'");
+        if($post_owner_details = $post_owner__details->fetch_assoc()){
+            $post_owner_name = $post_owner_details['Name'];
+            $post_owner_pic = $post_owner_details['recruiter_pic'];
+        }
     }
     ?> 
     <div class="col-md-6 col-sm-6" style="background-color: #FAF8F1; border-radius: 1rem;padding-block-start: 2rem;margin: 1rem; width: 45%">

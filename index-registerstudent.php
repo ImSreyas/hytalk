@@ -1,6 +1,7 @@
 <?php
+session_start();
 include('php/db/db.php');
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
+if(isset($_POST['reg-submit'])) {
   // Get form data
   $firstname = $_POST['firstname'];
   $lastname = $_POST['lastname'];
@@ -83,7 +84,6 @@ VALUES ('$firstname $lastname', '$semester', '$register_no', '$year-$month-$day'
               </li>
               
               <li class="dropdown"><a href="contact.php">Contact</a></li>
-              <li class="dropdown"><a href="php/logout.php">logout</a></li>
             </ul>
             <form class="navbar-form navbar-right hidden-sm">
               <div class="form-group">
@@ -113,12 +113,12 @@ VALUES ('$firstname $lastname', '$semester', '$register_no', '$year-$month-$day'
             <div class="reg-form-container"> 
             
               <!-- Register/Login Tabs-->
-              <!-- <div class="reg-options">
+              <div class="reg-options">
                 <ul class="nav nav-tabs">
                   <li class="active"><a href="#register" data-toggle="tab">Register</a></li>
                   <li><a href="#login" data-toggle="tab">Login</a></li>
-                </ul>
-              </div> -->
+                </ul><!--Tabs End-->
+              </div>
               
               <!--Registration Form Contents-->
               <div class="tab-content">
@@ -275,11 +275,54 @@ VALUES ('$firstname $lastname', '$semester', '$register_no', '$year-$month-$day'
                         </select>
                       </div>
                     </div>
-                    <button class="btn btn-primary" type="submit">Register Now</button>
+                    <button class="btn btn-primary" type="submit" name='reg-submit'>Register Now</button>
                   </form><!--Register Now Form Ends-->
                   <p><a href="#">Already have an account?</a></p>
                 </div><!--Registration Form Contents Ends-->
                 <!--Login-->
+                <div class="tab-pane" id="login">
+                  <h3>Login Student</h3>
+                  <p class="text-muted">Log into your account</p>
+                  
+                  <!--Login Form-->
+                  <?php 
+                  if(isset($_POST['login-btn'])){
+                    $email = $_POST['Email'];
+                    $password = $_POST['password'];
+                    $studentQuery = mysqli_query($conn, "select * from student where username='$email' && password='$password'");
+                    if($a = $studentQuery->fetch_assoc()){
+                      $student_id = $a['id'];
+                    }
+                    if($studentQuery->num_rows > 0){
+                      $_SESSION['student_id'] = $student_id;
+                      ?> 
+                        <script>window.location.href = 'student/newsfeed.php'</script>                     
+                      <?php
+                    } else {
+                      $error = 'username or password error';
+                    }
+                  }
+                  ?>
+                  <form name="Login_form" id='Login_form_' action="" method='POST'>
+                     <div class="row">
+                      <?php if(isset($error)) echo "<div class='alert alert-danger' role='alert'>
+                  ".$error."
+                </div>" ?>
+                      <div class="form-group col-xs-12">
+                        <label for="my-email" class="sr-only">Email</label>
+                        <input id="my-email" class="form-control input-group-lg" type="text" name="Email" title="Enter Email" placeholder="Your Email"/>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-xs-12">
+                        <label for="my-password" class="sr-only">Password</label>
+                        <input id="my-password" class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Password"/>
+                      </div>
+                    </div>
+                  </form><!--Login Form Ends--> 
+                  <p><a href="#">Forgot Password?</a></p>
+                  <button class="btn btn-primary" type="submit" name="login-btn" form="Login_form_">Login Now</button>
+                </div>
               </div>
             </div>
           </div>
