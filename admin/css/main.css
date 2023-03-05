@@ -1,0 +1,121 @@
+*{
+    --bg: #191c24;
+    --size: 3rem;
+    box-sizing: border-box;
+}
+
+.row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+.post-owner-pic{
+    width: var(--size);
+    height: var(--size);
+    border-radius: 100rem;
+    overflow: hidden;
+    display: inline-block;
+}
+.p-o-i{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.user-info{
+    display: inline-block;
+    padding: 0 1rem;
+    transform: translateY(-1rem);
+}
+.main-image-post,
+.video-wrapper{
+    width: 100%;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+.main-i-p{
+    object-fit: cover;
+    height: fit-content;
+    width: 100%;
+}
+.user-type{
+    padding: .4rem 1rem;
+    margin-left: .8rem;
+    border-radius: .6rem;
+    border: 2px solid var(--bg);
+}
+.time{
+    padding: .4rem 1rem;
+    margin-left: .2rem;
+    border-radius: .6rem;
+    background-color: var(--bg);
+}
+.dt-shower{
+    margin-top: 1.2rem;
+}
+.delete-post{
+    padding: .4rem 1rem;
+    background-color: #282c39;
+    border-radius: .5rem;
+    margin-left: 1rem;
+    color: #14171e;
+    transition: all 200ms ease-in-out;
+}
+.delete-post:hover{
+    text-decoration: none;
+    color: white;
+}
+.content-wrapper--{
+    background-color: var(--bg);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+}
+.caption{
+    color: #5b6276;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+
+.student-list-main-container{
+    padding: 2rem;
+    border-radius: 2rem;
+    background-color: var(--bg);
+    height: 20rem;
+}
+.student-div-upper-div{
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+}
+.student-image-container{
+    display: block;
+    width: 100%;
+    height: 12rem;
+    padding: 1rem;
+}
+.student-image{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
+.user-delete{
+    display: flex;
+    justify-content: flex-end;
+    grid-row: 2;
+}
+.user-d-link{
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    color: white;
+    text-decoration: none;
+    border: 2px solid #0e0f13;
+}
+.user-d-link:hover{
+    color: rgb(59, 63, 96);
+    text-decoration: none;
+}
+.student-name{
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #5b6276;
+}

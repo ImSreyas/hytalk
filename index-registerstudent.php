@@ -113,17 +113,17 @@ VALUES ('$firstname $lastname', '$semester', '$register_no', '$year-$month-$day'
             <div class="reg-form-container"> 
             
               <!-- Register/Login Tabs-->
-              <div class="reg-options">
+              <!-- <div class="reg-options">
                 <ul class="nav nav-tabs">
                   <li class="active"><a href="#register" data-toggle="tab">Register</a></li>
                   <li><a href="#login" data-toggle="tab">Login</a></li>
-                </ul><!--Tabs End-->
-              </div>
+                </ul>
+              </div> -->
               
               <!--Registration Form Contents-->
               <div class="tab-content">
                 <div class="tab-pane active" id="register">
-                  <h3>Register Now !!!</h3>
+                  <h3>student register</h3>
                   <p class="text-muted">Be cool and join today. Meet new friends</p>
                   
                   <!--Register Form-->
@@ -280,28 +280,6 @@ VALUES ('$firstname $lastname', '$semester', '$register_no', '$year-$month-$day'
                   <p><a href="#">Already have an account?</a></p>
                 </div><!--Registration Form Contents Ends-->
                 <!--Login-->
-                <div class="tab-pane" id="login">
-                  <h3>Login Student</h3>
-                  <p class="text-muted">Log into your account</p>
-                  
-                  <!--Login Form-->
-                  <form name="Login_form" id='Login_form'>
-                     <div class="row">
-                      <div class="form-group col-xs-12">
-                        <label for="my-email" class="sr-only">Email</label>
-                        <input id="my-email" class="form-control input-group-lg" type="text" name="Email" title="Enter Email" placeholder="Your Email"/>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="form-group col-xs-12">
-                        <label for="my-password" class="sr-only">Password</label>
-                        <input id="my-password" class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Password"/>
-                      </div>
-                    </div>
-                  </form><!--Login Form Ends--> 
-                  <p><a href="#">Forgot Password?</a></p>
-                  <button class="btn btn-primary">Login Now</button>
-                </div>
               </div>
             </div>
           </div>

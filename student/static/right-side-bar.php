@@ -14,6 +14,41 @@ $recruiterList = mysqli_query($conn, "select * from recruiter");
         <input type="text" onkeydown="search(this);" class="user-search" style="background-color: #472D2D;border-radius: 1.3rem;margin-bottom: 1rem;color: white;border: none; outline: none; padding: 1rem 2rem" placeholder="Search users">
     </div>
     <?php 
+    while($recruiter = $recruiterList->fetch_assoc()){
+            $friend_id = $recruiter['id'];
+            $alreadyF = mysqli_query($conn, "select * from friends where user_id='$student_id' && friend_id='$friend_id' && status='1' && friend_type='recruiter'")->num_rows;
+            if($alreadyF > 0) continue;
+
+            $follow = mysqli_query($conn, "select * from friends where user_id='$student_id' && friend_id='$friend_id' && status='0' && friend_type='recruiter'")->num_rows;
+            $f = ($follow > 0)? true : false;
+            ?>
+                <div class="follow-user" >
+                    <img src="../<?php echo $recruiter['recruiter_pic']; ?>" alt="" class="profile-photo-sm pull-left" />
+                    <div>
+                        <h5 style="font-size: 1.5rem" class="name"><?php echo $recruiter['Name'] ?></h5>
+                        <div style="font-size: 1.2rem;width: fit-content;padding: 0 1rem;border-radius: .8rem;text-align: start; margin: 0 !important; background-color: #FF8787;color: white;transform: translateY(-.3rem);">Recruiter</div>
+                    </div>
+                </div>
+            <?php
+        }
+        while($faculty = $facultyList->fetch_assoc()){
+            $friend_id = $faculty['id'];
+            $alreadyF = mysqli_query($conn, "select * from friends where user_id='$student_id' && friend_id='$friend_id' && status='1' && friend_type='faculty'")->num_rows;
+            if($alreadyF > 0) continue;
+
+
+            $follow = mysqli_query($conn, "select * from friends where user_id='$student_id' && friend_id='$friend_id' && status='0' && friend_type='faculty'")->num_rows;
+            $f = ($follow > 0)? true : false;
+            ?>
+                <div class="follow-user" >
+                    <img src="../<?php echo $faculty['Faculty_pic']; ?>" alt="" class="profile-photo-sm pull-left" />
+                    <div>
+                        <h5 style="font-size: 1.5rem" class="name"><?php echo $faculty['Name'] ?></h5>
+                        <div style="font-size: 1.2rem;width: fit-content;padding: 0 1rem;border-radius: .8rem;text-align: start; margin: 0 !important; background-color: #FF8787;color: white;transform: translateY(-.3rem);">faculty</div>
+                    </div>
+                </div>
+            <?php
+        }
         while($student = $studentList->fetch_assoc()){
             $friend_id = $student['id'];
             $alreadyF = mysqli_query($conn, "select * from friends where user_id='$student_id' && friend_id='$friend_id' && status='1' && friend_type='student'")->num_rows;
