@@ -10,12 +10,11 @@ if ($_SESSION['registration_status'] == "success") {
   $reg_error = true;
   unset($_SESSION['registration_status']);
 }
-if ($_SESSION['login_status'] == "fail") {
-  $log_fail = true;
+if($_SESSION['login_status']=="fail"){
+  $log_fail=true;
   unset($_SESSION['login_status']);
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,16 +25,16 @@ if ($_SESSION['login_status'] == "fail") {
 
   <!-- Stylesheets
     ================================================= -->
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/ionicons.min.css" />
-  <link rel="stylesheet" href="css/font-awesome.min.css" />
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/ionicons.min.css" />
+  <link rel="stylesheet" href="../css/font-awesome.min.css" />
 
   <!--Google Font-->
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
 
   <!--Favicon-->
-  <link rel="shortcut icon" type="image/png" href="images/logo.png.jpg" />
+  <link rel="shortcut icon" type="image/png" href="../images/logo.png.jpg" />
 </head>
 
 <body>
@@ -54,24 +53,24 @@ if ($_SESSION['login_status'] == "fail") {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <!-- <a class="navbar-brand" href="index-register.html"><img src="images/logo.png" alt="logo" /></a> -->
+          <!-- <a class="navbar-brand" href="index-register.html"><img src="../images/logo.png.jpg" alt="logo" /></a> -->
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right main-menu">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span><img src="images/down-arrow.png" alt="" /></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span><img src="../images/down-arrow.png" alt="" /></span></a>
               <ul class="dropdown-menu newsfeed-home">
-                <li><a href="index.php">Sign in</a></li>
-                <li><a href="index-registeradmin.php">Login Admin</a></li>
-                <li><a href="index-registerstudent.php">Login Student</a></li>
-                <li><a href="Faculty/index-registerfaculty.php">Login Faculty</a></li>
-                <li><a href="index-registerrecruiter.php">Login Recruiter</a></li>
+                <li><a href="index.html">Sign in</a></li>
+                <li><a href="../index-registeradmin.php">Login Admin</a></li>
+                <li><a href="../index-registerstudent.php">Login Student</a></li>
+                <li><a href="../index-registerfaculty.php">Login Faculty</a></li>
+                <li><a href="../index-registerrecruiter.php">Login Recruiter</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href="contact.php">Contact</a></li>
-            <li class="dropdown"><a href="php/logout.php">logout</a></li>
+
+            <li class="dropdown"><a href="contact.html">Contact</a></li>
           </ul>
           <form class="navbar-form navbar-right hidden-sm">
             <div class="form-group">
@@ -131,8 +130,9 @@ if ($_SESSION['login_status'] == "fail") {
                 }
                 ?>
 
+
                 <!--Register Form-->
-                <form action="Recruiter/registration.php" name="registration_form" id='registration_form' class="form-inline" method="post">
+                <form action="Registration.php" name="registration_form" id='registration_form' class="form-inline" method="post">
                   <div class="row">
                     <div class="form-group col-xs-6">
                       <label for="firstname" class="sr-only">First Name</label>
@@ -144,9 +144,13 @@ if ($_SESSION['login_status'] == "fail") {
                     </div>
                   </div>
                   <div class="row">
-                    <div class="form-group col-xs-12">
+                    <div class="form-group col-xs-6">
                       <label for="email" class="sr-only">Email</label>
-                      <input id="email" class="form-control input-group-lg" type="text" name="Email" title="Enter Email" placeholder="Your Email" required />
+                      <input id="email" class="form-control input-group-lg" type="email" name="email" title="Enter your email" placeholder="Email" required />
+                    </div>
+                    <div class="form-group col-xs-6">
+                      <label for="mobile n.o" class="sr-only">Mobile n.o</label>
+                      <input id="mobile n.o" class="form-control input-group-lg" type="text" name="mobile" title="Enter your Mobile n.o" placeholder="Mob n.o" pattern="[789][0-9]{9}" />
                     </div>
                   </div>
 
@@ -159,6 +163,7 @@ if ($_SESSION['login_status'] == "fail") {
                   }
                   ?>
 
+
                   <div class="row">
                     <div class="form-group col-xs-12">
                       <label for="password" class="sr-only">Password</label>
@@ -166,11 +171,80 @@ if ($_SESSION['login_status'] == "fail") {
                     </div>
                   </div>
                   <div class="row">
-                    <div class="form-group  col-xs-12">
-                      <label for="Company Name" class="sr-only">Mobile n.o</label>
-                      <input id="mobile n.o" class="form-control input-group-lg reg_name" type="text" name="Mobile" title="Enter mobile number" placeholder="Mobile Number" required />
+                    <p class="birth"><strong>Date of Birth</strong></p>
+                    <div class="form-group col-sm-3 col-xs-6">
+                      <label for="month" class="sr-only"></label>
+                      <select class="form-control" id="day">
+                        <option value="Day" disabled selected>Day</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                        <option>13</option>
+                        <option>14</option>
+                        <option>15</option>
+                        <option>16</option>
+                        <option>17</option>
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
+                        <option>21</option>
+                        <option>22</option>
+                        <option>23</option>
+                        <option>24</option>
+                        <option>25</option>
+                        <option>26</option>
+                        <option>27</option>
+                        <option>28</option>
+                        <option>29</option>
+                        <option>30</option>
+                        <option>31</option>
+                      </select>
                     </div>
-
+                    <div class="form-group col-sm-3 col-xs-6">
+                      <label for="month" class="sr-only"></label>
+                      <select class="form-control" id="month">
+                        <option value="month" disabled selected>Month</option>
+                        <option>Jan</option>
+                        <option>Feb</option>
+                        <option>Mar</option>
+                        <option>Apr</option>
+                        <option>May</option>
+                        <option>Jun</option>
+                        <option>Jul</option>
+                        <option>Aug</option>
+                        <option>Sep</option>
+                        <option>Oct</option>
+                        <option>Nov</option>
+                        <option>Dec</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-sm-6 col-xs-12">
+                      <label for="year" class="sr-only"></label>
+                      <select class="form-control" id="year">
+                        <option value="year" disabled selected>Year</option>
+                        <option>2000</option>
+                        <option>2001</option>
+                        <option>2002</option>
+                        <option>2004</option>
+                        <option>2005</option>
+                        <option>2006</option>
+                        <option>2007</option>
+                        <option>2008</option>
+                        <option>2009</option>
+                        <option>2010</option>
+                        <option>2011</option>
+                        <option>2012</option>
+                      </select>
+                    </div>
                   </div>
                   <div class="form-group gender">
                     <label class="radio-inline">
@@ -182,41 +256,50 @@ if ($_SESSION['login_status'] == "fail") {
                   </div>
                   <div class="row">
                     <div class="form-group col-xs-6">
-                      <label for="Company Name" class="sr-only">Company Name</label>
-                      <input id="Batch" class="form-control input-group-lg reg_name" type="text" name="CompanyName" title="Enter Company name" placeholder="Your company name" required />
+                      <label for="Designation" class="sr-only">Designation</label>
+                      <input id="Designation" class="form-control input-group-lg reg_name" type="text" name="Designation" title="Enter your designation" placeholder="Your Designation" required />
                     </div>
                     <div class="form-group col-xs-6">
-                      <label for="Designation" class="sr-only">Designation</label>
-                      <input id="Designation" class="form-control input-group-lg reg_name" type="text" name="Designation" title="Enter Company designation" placeholder="Your Designation" required />
+                      <label for="Department" class="sr-only"></label>
+                      <select class="form-control" id="country" required name="Dep">
+                        <option value="Department" disabled selected>Department </option>
+                        <option value="CS">Computer Science</option>
+                        <option value="PHY">Physics</option>
+                        <option value="MAT">Mathematics</option>
+                        <option value="ECO">Economics</option>
+                        <option value="CHE">Chemistry</option>
+                        <option value="HIS">History</option>
+                        <option value="COM">Commerce</option>
+
+                      </select>
                     </div>
                   </div>
-                  <!--Register Now Form Ends-->
                   <p><a href="#">Already have an account?</a></p>
                   <!-- <button class="btn btn-primary">Register Now</button> -->
-                  <input class="btn btn-primary" type="submit" value="Register Now">
-                </form>
+                  <input type="submit" value="Register Now" class="btn btn-primary">
+                </form><!--Register Now Form Ends-->
               </div><!--Registration Form Contents Ends-->
 
               <!--Login-->
               <div class="tab-pane" id="login">
-                <h3>Login Recruiter</h3>
+                <h3>Login Faculty</h3>
                 <p class="text-muted">Log into your account</p>
 
                 <!--Login Form-->
-                <form name="Login_form" id='Login_form' method="post" action="Recruiter/login.php">
+                <form name="Login_form" id='Login_form' action="Login.php" method="post">
                   <div class="row">
                     <div class="form-group col-xs-12">
-
-                      <?php
-                      if (isset($log_fail)) {
-                        echo ' <div class="alert alert-danger" role="alert">
+                  <?php 
+                   if (isset($log_fail)) {
+                    echo ' <div class="alert alert-danger" role="alert">
                     Invalid login credentials !
                   </div>';
-                      }
-                      ?>
+                  }
+                  ?>
+                   
 
                       <label for="my-email" class="sr-only">Email</label>
-                      <input id="my-email" class="form-control input-group-lg" type="text" name="Email" title="Enter Email" placeholder="Your Email" required />
+                      <input id="my-email" class="form-control input-group-lg" type="email" name="Email" title="Enter Email" placeholder="Your Email" required />
                     </div>
                   </div>
                   <div class="row">
@@ -225,10 +308,11 @@ if ($_SESSION['login_status'] == "fail") {
                       <input id="my-password" class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Password" required />
                     </div>
                   </div>
+                  <!--Login Form Ends-->
                   <p><a href="#">Forgot Password?</a></p>
                   <input class="btn btn-primary" type="submit" value="Login Now">
-                </form><!--Login Form Ends-->
-                <!-- <button class="btn btn-primary">Login Now</button> -->
+                  <!-- <button class="btn btn-primary">Login Now</button> -->
+                </form>
               </div>
             </div>
           </div>
@@ -258,11 +342,11 @@ if ($_SESSION['login_status'] == "fail") {
 
   <!-- Scripts
     ================================================= -->
-  <script src="js/jquery-3.1.1.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.appear.min.js"></script>
-  <script src="js/jquery.incremental-counter.js"></script>
-  <script src="js/script.js"></script>
+  <script src="../js/jquery-3.1.1.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery.appear.min.js"></script>
+  <script src="../js/jquery.incremental-counter.js"></script>
+  <script src="../js/script.js"></script>
 
 </body>
 

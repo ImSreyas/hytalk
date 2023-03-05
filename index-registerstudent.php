@@ -77,7 +77,7 @@ VALUES ('$firstname $lastname', '$semester', '$register_no', '$year-$month-$day'
                     <li><a href="index.php">Sign in</a></li>
                     <li><a href="index-registeradmin.php">Login Admin</a></li>
                     <li><a href="index-registerstudent.php">Login Student</a></li>
-                    <li><a href="index-registerfaculty.php">Login Faculty</a></li>
+                    <li><a href="Faculty/index-registerfaculty.php">Login Faculty</a></li>
                     <li><a href="index-registerrecruiter.php">Login Recruiter</a></li>
                   </ul>
               </li>
