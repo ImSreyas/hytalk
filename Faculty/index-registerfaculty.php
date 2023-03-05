@@ -34,7 +34,7 @@ if($_SESSION['login_status']=="fail"){
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
 
   <!--Favicon-->
-  <link rel="shortcut icon" type="image/png" href="images/fav.png" />
+  <link rel="shortcut icon" type="image/png" href="../images/logo.png.jpg" />
 </head>
 
 <body>
@@ -60,13 +60,13 @@ if($_SESSION['login_status']=="fail"){
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right main-menu">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span><img src="images/down-arrow.png" alt="" /></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span><img src="../images/down-arrow.png" alt="" /></span></a>
               <ul class="dropdown-menu newsfeed-home">
                 <li><a href="index.html">Sign in</a></li>
-                <li><a href="index-registeradmin.html">Login Admin</a></li>
-                <li><a href="index-registerstudent.html">Login Student</a></li>
-                <li><a href="index-registerfaculty.html">Login Faculty</a></li>
-                <li><a href="index-registerrecruiter.html">Login Recruiter</a></li>
+                <li><a href="../index-registeradmin.php">Login Admin</a></li>
+                <li><a href="../index-registerstudent.php">Login Student</a></li>
+                <li><a href="../index-registerfaculty.php">Login Faculty</a></li>
+                <li><a href="../index-registerrecruiter.php">Login Recruiter</a></li>
               </ul>
             </li>
 
