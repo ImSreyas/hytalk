@@ -7,7 +7,7 @@ $pass=$_POST['password'];
 $checkEmail="SELECT * FROM `faculty` WHERE `Email` = '$emai' AND `Password` = '$pass';";
 $checkExe = mysqli_query($conn, $checkEmail);
 if(mysqli_num_rows($checkExe) > 0){
-    $_SESSION['user']=$emai;
+    $_SESSION['email']=$emai;
     header('Location: ../Faculty/newsfeed.php');
 }else{
     $_SESSION['login_status'] = "fail";

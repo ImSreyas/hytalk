@@ -106,7 +106,7 @@ while($p = $postContents->fetch_assoc()){
 
                 <div class="post-comment">
                     <form action="" method="POST" style="width: 100%">
-                        <img src="../<?php echo $current_user_pic; ?>" alt="" class="profile-photo-sm" />
+                        <img src="../<?php echo $FacImage; ?>" alt="" class="profile-photo-sm" />
                         <input required type="text" class="form-control" name="comment-content" placeholder="Post a comment">
                         <input type="hidden" name='post-owner' value="<?php echo $post_owner_id; ?>"/>
                         <input type="hidden" name='post-id' value="<?php echo $post_id; ?>"/>

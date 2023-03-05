@@ -8,7 +8,7 @@ include('static/header.php');
 	
 <head>
     
-		<title>News Feed | Check what your friends are doing</title>
+		<title>Faculty</title>
 
     <!-- Stylesheets
     ================================================= -->
@@ -40,7 +40,10 @@ include('static/header.php');
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index-registeradmin.php"><img src="images/logo.png" alt="logo" /></a>
+            <a class="navbar-brand" href="index-registeradmin.php">
+              <!-- <img src="images/logo.png" alt="logo" /> -->
+              Hytalk
+            </a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -57,14 +60,14 @@ include('static/header.php');
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Newsfeed <span><img src="images/down-arrow.png" alt="" /></span></a>
                   <ul class="dropdown-menu newsfeed-home">
                     <li><a href="newsfeed.php">Newsfeed</a></li>
-                    <li><a href="newsfeed-people-nearby.php">Poeple Nearly</a></li>
+                    <!-- <li><a href="newsfeed-people-nearby.php">Poeple Nearly</a></li>
                     <li><a href="newsfeed-friends.php">My friends</a></li>
                     <li><a href="newsfeed-messages.php">Chatroom</a></li>
                     <li><a href="newsfeed-images.php">Images</a></li>
-                    <li><a href="newsfeed-videos.php">Videos</a></li>
+                    <li><a href="newsfeed-videos.php">Videos</a></li> -->
                   </ul>
               </li>
-              <li class="dropdown">
+              <!-- <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Timeline <span><img src="images/down-arrow.png" alt="" /></span></a>
                 <ul class="dropdown-menu login">
                   <li><a href="timeline.php">Timeline</a></li>
@@ -77,7 +80,7 @@ include('static/header.php');
                   <li><a href="edit-profile-settings.php">Account Settings</a></li>
                   <li><a href="edit-profile-password.php">Change Password</a></li>
                 </ul>
-              </li>
+              </li> -->
              
               <li class="dropdown"><a href="contact.php">Contact</a></li>
               <li class="dropdown"><a href="php/logout.php">logout</a></li>
