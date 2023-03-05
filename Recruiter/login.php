@@ -4,12 +4,12 @@ session_start();
 include '../php/db/db.php';
 $emai=$_POST['Email'];
 $pass=$_POST['password'];
-$checkEmail="SELECT * FROM `faculty` WHERE `Email` = '$emai' AND `Password` = '$pass';";
+$checkEmail="SELECT * FROM `recruiter` WHERE `Email` = '$emai' AND `Password` = '$pass';";
 $checkExe = mysqli_query($conn, $checkEmail);
 if(mysqli_num_rows($checkExe) > 0){
-    header('Location: ../Faculty/facultyPage.html');
+    header('Location: post.php');
 }else{
     $_SESSION['login_status'] = "fail";
-    header('Location: ../Faculty/index-registerfaculty.php#login');
+    header('Location: ../index-registerrecruiter.php');
 }
 ?>
