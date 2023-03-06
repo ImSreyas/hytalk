@@ -71,7 +71,6 @@ if ($_SESSION['login_status'] == "fail") {
               </ul>
             </li>
             <li class="dropdown"><a href="contact.php">Contact</a></li>
-            <li class="dropdown"><a href="php/logout.php">logout</a></li>
           </ul>
           <form class="navbar-form navbar-right hidden-sm">
             <div class="form-group">

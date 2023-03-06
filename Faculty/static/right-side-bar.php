@@ -1,4 +1,5 @@
 <?php 
+
 $studentList = mysqli_query($conn, "select * from student");
 
 $facultyList = mysqli_query($conn, "select * from faculty");
@@ -16,11 +17,11 @@ $recruiterList = mysqli_query($conn, "select * from recruiter");
     <?php 
         while($recruiter = $recruiterList->fetch_assoc()){
             $friend_id = $recruiter['id'];
-            $alreadyF = mysqli_query($conn, "select * from friends where user_id='$student_id' && friend_id='$friend_id' && status='1' && friend_type='recruiter'")->num_rows;
-            if($alreadyF > 0) continue;
+            // $alreadyF = mysqli_query($conn, "select * from friends where user_id='$student_id' && friend_id='$friend_id' && status='1' && friend_type='recruiter'")->num_rows;
+            // if($alreadyF > 0) continue;
 
-            $follow = mysqli_query($conn, "select * from friends where user_id='$student_id' && friend_id='$friend_id' && status='0' && friend_type='recruiter'")->num_rows;
-            $f = ($follow > 0)? true : false;
+            // $follow = mysqli_query($conn, "select * from friends where user_id='$student_id' && friend_id='$friend_id' && status='0' && friend_type='recruiter'")->num_rows;
+            // $f = ($follow > 0)? true : false;
             ?>
                 <div class="follow-user" >
                     <img src="../<?php echo $recruiter['recruiter_pic']; ?>" alt="" class="profile-photo-sm pull-left" />
@@ -28,11 +29,11 @@ $recruiterList = mysqli_query($conn, "select * from recruiter");
                         <h5 style="font-size: 1.5rem" class="name"><?php echo $recruiter['Name'] ?></h5>
                         <div style="font-size: 1.2rem;width: fit-content;padding: 0 1rem;border-radius: .8rem;text-align: start; margin: 0 !important; background-color: #FF8787;color: white;transform: translateY(-.3rem);">Recruiter</div>
                         <div style="font-size: 1.2rem;width: fit-content;padding: 0 1rem;border-radius: .8rem;text-align: start; margin: 0 !important; background-color: #54B435;">
-                        <?php if(!$f){ ?>
-                            <a style="color: white" href="php/addFriend.php?user_id=<?php echo $recruiter['id'] ?>&user_type=recruiter&id=<?php echo $student_id; ?>&type=student" class="text-green">Send request</a>
+                        <!-- <?php if(!$f){ ?> -->
+                            <!-- <a style="color: white" href="php/addFriend.php?user_id=<?php echo $recruiter['id'] ?>&user_type=recruiter&id=<?php echo $student_id; ?>&type=student" class="text-green">Send request</a> -->
                             <?php
                         } else { ?>
-                            <a style="color: white" href="php/addFriendCancel.php?user_id=<?php echo $recruiter['id'] ?>&user_type=recruiter&id=<?php echo $student_id; ?>&type=student" class="text-green">Requested</a>
+                            <!-- <a style="color: white" href="php/addFriendCancel.php?user_id=<?php echo $recruiter['id'] ?>&user_type=recruiter&id=<?php echo $student_id; ?>&type=student" class="text-green">Requested</a> -->
                             <?php
                         } ?>
                         </div>
@@ -42,12 +43,12 @@ $recruiterList = mysqli_query($conn, "select * from recruiter");
         }
         while($faculty = $facultyList->fetch_assoc()){
             $friend_id = $faculty['id'];
-            $alreadyF = mysqli_query($conn, "select * from friends where user_id='$student_id' && friend_id='$friend_id' && status='1' && friend_type='faculty'")->num_rows;
-            if($alreadyF > 0) continue;
+            // $alreadyF = mysqli_query($conn, "select * from friends where user_id='$student_id' && friend_id='$friend_id' && status='1' && friend_type='faculty'")->num_rows;
+            // if($alreadyF > 0) continue;
 
 
-            $follow = mysqli_query($conn, "select * from friends where user_id='$student_id' && friend_id='$friend_id' && status='0' && friend_type='faculty'")->num_rows;
-            $f = ($follow > 0)? true : false;
+            // $follow = mysqli_query($conn, "select * from friends where user_id='$student_id' && friend_id='$friend_id' && status='0' && friend_type='faculty'")->num_rows;
+            // $f = ($follow > 0)? true : false;
             ?>
                 <div class="follow-user" >
                     <img src="../<?php echo $faculty['Faculty_pic']; ?>" alt="" class="profile-photo-sm pull-left" />
@@ -55,11 +56,11 @@ $recruiterList = mysqli_query($conn, "select * from recruiter");
                         <h5 style="font-size: 1.5rem" class="name"><?php echo $faculty['Name'] ?></h5>
                         <div style="font-size: 1.2rem;width: fit-content;padding: 0 1rem;border-radius: .8rem;text-align: start; margin: 0 !important; background-color: #FF8787;color: white;transform: translateY(-.3rem);">faculty</div>
                         <div style="font-size: 1.2rem;width: fit-content;padding: 0 1rem;border-radius: .8rem;text-align: start; margin: 0 !important; background-color: #54B435;">
-                        <?php if(!$f){ ?>
-                            <a style="color: white" href="php/addFriend.php?user_id=<?php echo $faculty['id'] ?>&user_type=faculty&id=<?php echo $student_id; ?>&type=student" class="text-green">Send request</a>
+                        <!-- <?php if(!$f){ ?> -->
+                            <!-- <a style="color: white" href="php/addFriend.php?user_id=<?php echo $faculty['id'] ?>&user_type=faculty&id=<?php echo $student_id; ?>&type=student" class="text-green">Send request</a> -->
                             <?php
                         } else { ?>
-                            <a style="color: white" href="php/addFriendCancel.php?user_id=<?php echo $faculty['id'] ?>&user_type=faculty&id=<?php echo $student_id; ?>&type=student" class="text-green">Requested</a>
+                            <!-- <a style="color: white" href="php/addFriendCancel.php?user_id=<?php echo $faculty['id'] ?>&user_type=faculty&id=<?php echo $student_id; ?>&type=student" class="text-green">Requested</a> -->
                             <?php
                         } ?>
                         </div>
@@ -69,13 +70,13 @@ $recruiterList = mysqli_query($conn, "select * from recruiter");
         }
         while($student = $studentList->fetch_assoc()){
             $friend_id = $student['id'];
-            $alreadyF = mysqli_query($conn, "select * from friends where user_id='$student_id' && friend_id='$friend_id' && status='1' && friend_type='student'")->num_rows;
-            if($alreadyF > 0) continue;
+            // $alreadyF = mysqli_query($conn, "select * from friends where user_id='$student_id' && friend_id='$friend_id' && status='1' && friend_type='student'")->num_rows;
+            // if($alreadyF > 0) continue;
 
 
-            $follow = mysqli_query($conn, "select * from friends where user_id='$student_id' && friend_id='$friend_id' && status='0' && friend_type='student'")->num_rows;
-            $f = ($follow > 0)? true : false;
-            if($student['id'] == $student_id) continue;
+            // $follow = mysqli_query($conn, "select * from friends where user_id='$student_id' && friend_id='$friend_id' && status='0' && friend_type='student'")->num_rows;
+            // $f = ($follow > 0)? true : false;
+            // if($student['id'] == $student_id) continue;
             ?>
                 <div class="follow-user">
                     <img src="../<?php echo $student['Student_pic']; ?>" alt="" class="profile-photo-sm pull-left" />
@@ -83,11 +84,11 @@ $recruiterList = mysqli_query($conn, "select * from recruiter");
                         <h5 style="font-size: 1.5rem" class="name"><?php echo $student['Name'] ?></h5>
                         <div style="font-size: 1.2rem;width: fit-content;padding: 0 1rem;border-radius: .8rem;text-align: start; margin: 0 !important; background-color: #FF8787;color: white;transform: translateY(-.3rem);">student</div>
                         <div style="font-size: 1.2rem;width: fit-content;padding: 0 1rem;border-radius: .8rem;text-align: start; margin: 0 !important; background-color: #54B435;">
-                        <?php if(!$f){ ?>
-                        <a style="color: white" href="php/addFriend.php?user_id=<?php echo $student['id'] ?>&user_type=student&id=<?php echo $student_id; ?>&type=student" class="text-green">Send request</a>
+                        <!-- <?php if(!$f){ ?> -->
+                        <!-- <a style="color: white" href="php/addFriend.php?user_id=<?php echo $student['id'] ?>&user_type=student&id=<?php echo $student_id; ?>&type=student" class="text-green">Send request</a> -->
                         <?php
                         } else { ?>
-                            <a style="color: white" href="php/addFriendCancel.php?user_id=<?php echo $student['id'] ?>&user_type=student&id=<?php echo $student_id; ?>&type=student" class="text-green">Requested</a>
+                            <!-- <a style="color: white" href="php/addFriendCancel.php?user_id=<?php echo $student['id'] ?>&user_type=student&id=<?php echo $student_id; ?>&type=student" class="text-green">Requested</a> -->
                             <?php
                         } ?>
                         </div>

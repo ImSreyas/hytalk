@@ -121,7 +121,7 @@ include('static/header.php');
         <!-- Newsfeed Common Side Bar Right
           ================================================= -->
         <?php
-        include('static/right-side-bar.php'); 
+        // include('static/right-side-bar.php'); 
         ?>
       </div>
     </div>
