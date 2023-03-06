@@ -21,7 +21,7 @@ include('static/header.php');
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
     
     <!--Favicon-->
-    <link rel="shortcut icon" type="image/png" href="../images/fav.png"/>
+    <link rel="shortcut icon" type="image/png" href="../../images/fav.png"/>
 	</head>
   <body>
 
@@ -39,21 +39,21 @@ include('static/header.php');
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index-registeradmin.php"><img src="images/logo.png" alt="logo" /></a>
+            <a class="navbar-brand" href="index-registeradmin.php"><img src="../images/logo.png" alt="logo" /></a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right main-menu">
               <!-- <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span><img src="images/down-arrow.png" alt="" /></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span><img src="../images/down-arrow.png" alt="" /></span></a>
                   <ul class="dropdown-menu newsfeed-home">
                     <li><a href="index.php">sign in</a></li>
                     <li><a href="index-registeradmin.php">sign up</a></li>
                   </ul>
               </li> -->
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Newsfeed <span><img src="images/down-arrow.png" alt="" /></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Newsfeed <span><img src="../images/down-arrow.png" alt="" /></span></a>
                   <ul class="dropdown-menu newsfeed-home">
                     <li><a href="newsfeed.php">Newsfeed</a></li>
                     <!-- <li><a href="newsfeed-people-nearby.php">Poeple Nearly</a></li> -->
@@ -64,7 +64,7 @@ include('static/header.php');
                   </ul>
               </li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Timeline <span><img src="images/down-arrow.png" alt="" /></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Timeline <span><img src="../images/down-arrow.png" alt="" /></span></a>
                 <ul class="dropdown-menu login">
                   <li><a href="timeline.php">Timeline</a></li>
                   <li><a href="edit-profile-basic.php">Timeline About</a></li>
@@ -106,8 +106,8 @@ include('static/header.php');
             <div class="row">
               <div class="col-md-3">
                 <div class="profile-info">
-                  <img src="images/users/user-1.jpg" alt="" class="img-responsive profile-photo" />
-                  <h3>Treesa</h3>
+                  <img src="../<?php echo $student_pic; ?>" alt="" class="img-responsive profile-photo" />
+                  <h3><?php echo $student_name; ?></h3>
                   <p class="text-muted">Student</p>
                 </div>
               </div>
@@ -116,10 +116,9 @@ include('static/header.php');
                   <li><a href="timeline.php">Timeline</a></li>
                   <li><a href="edit-profile-basic.php">About</a></li>
                   <li><a href="timeline-album.php" class="active">Album</a></li>
-                  <li><a href="timeline-friends.php">Friends</a></li>
                 </ul>
                 <ul class="follow-me list-inline">
-                  <li>899 people following you</li>
+                  <li><?php echo $userFollowCount; ?> followers and <?php echo $userFollowingCount; ?> following</li>
                   <li><button class="btn-primary">Add Friend</button></li>
                 </ul>
               </div>
@@ -129,7 +128,7 @@ include('static/header.php');
           <!--Timeline Menu for Small Screens-->
           <div class="navbar-mobile hidden-lg hidden-md">
             <div class="profile-info">
-              <img src="images/users/user-1.jpg" alt="" class="img-responsive profile-photo" />
+              <img src="../images/users/user-1.jpg" alt="" class="img-responsive profile-photo" />
               <h4>Sarah Cruiz</h4>
               <p class="text-muted">Creative Director</p>
             </div>
@@ -138,9 +137,9 @@ include('static/header.php');
                 <li><a href="timline.html">Timeline</a></li>
                 <li><a href="edit-profile-basic.php">About</a></li>
                 <li><a href="timeline-album.php" class="active">Album</a></li>
-                <li><a href="timeline-friends.php">Friends</a></li>
               </ul>
-              <button class="btn-primary">Add Friends</button>
+              <li><?php echo $userFollowCount; ?> followers and <?php echo $userFollowingCount; ?> following</li>
+              <li><button class="btn-primary">Add Friends</button></li>
             </div>
           </div>
 
@@ -152,119 +151,10 @@ include('static/header.php');
 
               <!-- Photo Album
               ================================================= -->
-              <ul class="album-photos">
-                <li>
-                  <div class="img-wrapper" data-toggle="modal" data-target=".photo-1">
-                    <img src="images/album/1.jpg" alt="photo" />
-                  </div>
-                  <div class="modal fade photo-1" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-                        <img src="images/album/1.jpg" alt="photo" />
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="img-wrapper" data-toggle="modal" data-target=".photo-2">
-                    <img src="images/album/2.jpg" alt="photo" />
-                  </div>
-                  <div class="modal fade photo-2" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-                        <img src="images/album/2.jpg" alt="photo" />
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="img-wrapper" data-toggle="modal" data-target=".photo-3">
-                    <img src="images/album/3.jpg" alt="photo" />
-                  </div>
-                  <div class="modal fade photo-3" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-                        <img src="images/album/3.jpg" alt="photo" />
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="img-wrapper" data-toggle="modal" data-target=".photo-4">
-                    <img src="images/album/4.jpg" alt="photo" />
-                  </div>
-                  <div class="modal fade photo-4" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-                        <img src="images/album/4.jpg" alt="photo" />
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="img-wrapper" data-toggle="modal" data-target=".photo-5">
-                    <img src="images/album/5.jpg" alt="photo" />
-                  </div>
-                  <div class="modal fade photo-5" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-                        <img src="images/album/5.jpg" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="img-wrapper" data-toggle="modal" data-target=".photo-6">
-                    <img src="images/album/6.jpg" alt="photo" />
-                  </div>
-                  <div class="modal fade photo-6" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-                        <img src="images/album/6.jpg" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="img-wrapper" data-toggle="modal" data-target=".photo-7">
-                    <img src="images/album/7.jpg" alt="photo" />
-                  </div>
-                  <div class="modal fade photo-7" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-                        <img src="images/album/7.jpg" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="img-wrapper" data-toggle="modal" data-target=".photo-8">
-                    <img src="images/album/8.jpg" alt="photo" />
-                  </div>
-                  <div class="modal fade photo-8" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-                        <img src="images/album/8.jpg" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="img-wrapper" data-toggle="modal" data-target=".photo-9">
-                    <img src="images/album/9.jpg" alt="photo" />
-                  </div>
-                  <div class="modal fade photo-9" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-                        <img src="images/album/9.jpg" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
+              <?php include 'static/album.php'; ?>
             </div>
             <div class="col-md-2 static">
-              <div id="sticky-sidebar">
+              <!-- <div id="sticky-sidebar">
                 <h4 class="grey">Your activity</h4>
                 <div class="feed-item">
                   <div class="live-activity">
@@ -290,7 +180,7 @@ include('static/header.php');
                     <p class="text-muted">a day ago</p>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -305,7 +195,7 @@ include('static/header.php');
       	<div class="row">
           <div class="footer-wrapper">
             <div class="col-md-3 col-sm-3">
-              <a href="#"><img src="images/logo.png.jpg" alt="" class="footer-logo" /></a>
+              <a href="#"><img src="../images/logo.png.jpg" alt="" class="footer-logo" /></a>
               <ul class="list-inline social-icons">
               	<li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
               	<li><a href="#"><i class="icon ion-social-twitter"></i></a></li>

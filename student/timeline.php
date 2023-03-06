@@ -114,8 +114,8 @@ include('static/header.php');
                 <ul class="list-inline profile-menu">
                   <li><a href="timeline.php" class="active">Timeline</a></li>
                   <li><a href="edit-profile-basic.php">About</a></li>
-                  <!-- <li><a href="timeline-album.php">Album</a></li>
-                  <li><a href="timeline-friends.php">Friends</a></li> -->
+                  <li><a href="timeline-album.php">Album</a></li>
+                  <!-- <li><a href="timeline-friends.php">Friends</a></li> -->
                 </ul>
                 <ul class="follow-me list-inline">
                   <li><?php echo $userFollowCount; ?> followers and <?php echo $userFollowingCount; ?> following</li>

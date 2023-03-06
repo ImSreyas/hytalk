@@ -1,4 +1,3 @@
-
 <?php 
 if(isset($_POST['post-submit'])){
 $image_fileDestination_new="";
@@ -62,6 +61,7 @@ if (!$video_fileName == "") {
 }
 
 mysqli_query($conn, "insert into feed set user_id='$student_id', user_type='student', caption='$caption', article='$text', image='$image_fileDestination_new', video='$video_fileDestination_new'");
+mysqli_query($conn, "insert into album set user_id='$student_id', image='$image_fileDestination_new', video='$video_fileDestination_new'");
 }
 
 ?>
@@ -119,8 +119,8 @@ mysqli_query($conn, "insert into feed set user_id='$student_id', user_type='stud
             <textarea required name="texts" id="exampleTextarea" cols="30" rows="5" class="form-control text-area-field" placeholder="Write what you wish"></textarea>
         </div>
         <div class="third-row">
-            image<input type="file" name="image">
-            video<input type="file" name="video">
+            image<input type="file" name="image" >
+            video<input type="file" name="video" accept="video/mp4,video/x-m4v,video/*">
             <button type="submit" class="sub-btn" name='post-submit'>post</button>
         </div>
     </form>
