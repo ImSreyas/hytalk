@@ -141,7 +141,7 @@ VALUES ('$firstname $lastname', '$semester', '$register_no', '$year-$month-$day'
                     <div class="row">
                       <div class="form-group col-xs-6">
                         <label for="email" class="sr-only">Email</label>
-                        <input required id="email" class="form-control input-group-lg" type="text" name="email" title="Enter your email" placeholder="Email"/>
+                        <input required id="email" class="form-control input-group-lg" type="email" name="email" title="Enter your email" placeholder="Email"/>
                       </div>
                       <div class="form-group col-xs-6">
                         <label for="register" class="sr-only">Register n.o</label>
