@@ -1,14 +1,14 @@
 <?php 
 
-$current_user_id = $_SESSION['student_id'];
-$current_user_details = mysqli_query($conn, "select * from student where id='$current_user_id'")->fetch_assoc();
-$current_user_pic = $current_user_details['Student_pic'];
+// $current_user_id = $_SESSION['student_id'];
+// $current_user_details = mysqli_query($conn, "select * from student where id='$current_user_id'")->fetch_assoc();
+// $current_user_pic = $current_user_details['Student_pic'];
 
 if(isset($_POST['comment-btn'])){
     $comment_content = $_POST['comment-content'];
     $post_owner = $_POST['post-owner'];
     $post_id_ = $_POST['post-id'];
-    mysqli_query($conn, "insert into comment set comment='$comment_content', post_id='$post_id_', commenter_id='$current_user_id', post_owner_id='$post_owner', commenter_type='student'");
+    mysqli_query($conn, "insert into comment set comment='$comment_content', post_id='$post_id_', commenter_id='$FacId', post_owner_id='$post_owner', commenter_type='faculty'");
 }
 
 $postContents = mysqli_query($conn, "select * from feed");
@@ -24,9 +24,9 @@ while($p = $postContents->fetch_assoc()){
 
     $post_owner_date_and_time = explode(" ", $post_owner_time);
 
-    $follow_or_not_count = mysqli_query($conn, "select * from friends where user_id='$student_id' && friend_id='$post_owner_id' && status='1'")->num_rows;
-    $follow_or_not = ($follow_or_not_count > 0)? 'Following' : 'Unfollowed';
-    if($student_id == $post_owner_id) $follow_or_not = '';
+    // $follow_or_not_count = mysqli_query($conn, "select * from friends where user_id='$student_id' && friend_id='$post_owner_id' && status='1'")->num_rows;
+    // $follow_or_not = ($follow_or_not_count > 0)? 'Following' : 'Unfollowed';
+    // if($student_id == $post_owner_id) $follow_or_not = '';
 
     if($p['user_type'] == 'student'){
         $post_owner_details = mysqli_query($conn, "select * from student where id='$post_owner_id'")->fetch_assoc();
@@ -46,7 +46,7 @@ while($p = $postContents->fetch_assoc()){
 
         <img src="../<?php echo $post_owner_pic; ?>" alt="user" class="profile-photo-md pull-left" />
         <div class="user-info">
-            <h5><a href="timeline.php" class="profile-link"><?php echo $post_owner_name; ?></a><span class="following"><?php echo $follow_or_not; ?></span><span style="background-color: aquamarine; color: black;margin-inline: 1rem; padding: .2rem 1rem; border-radius: .5rem;"><?php echo $type; ?></span></h5>
+            <h5><a href="timeline.php" class="profile-link"><?php echo $post_owner_name; ?></a><span class="following"><?php /*echo $follow_or_not; */?></span><span style="background-color: aquamarine; color: black;margin-inline: 1rem; padding: .2rem 1rem; border-radius: .5rem;"><?php echo $type; ?></span></h5>
             <p class="text-muted">
                 <span><?php echo $post_owner_date_and_time[0]; ?></span>
                 <span style="font-size: 1rem; padding: .5rem 1rem; background-color: #FAEAB1; color: black; border-radius: 1rem"><?php echo $post_owner_date_and_time[1]; ?></span>
@@ -89,7 +89,7 @@ while($p = $postContents->fetch_assoc()){
                     } else if($comment['commenter_type'] == 'faculty'){
                         $comment_owner_details = mysqli_query($conn, "select * from faculty where id='$comment_owner_id'")->fetch_assoc();
                         $comment_owner_name = $comment_owner_details['Name'];
-                        $comment_owner_pic = $comment_owner_details['faculty_pic'];
+                        $comment_owner_pic = $FacImage;
                     } else {
                         $comment_owner_details = mysqli_query($conn, "select * from recruiter where id='$comment_owner_id'")->fetch_assoc();
                         $comment_owner_name = $comment_owner_details['Name'];
