@@ -78,7 +78,7 @@ while($friend = $friendList->fetch_assoc()){
                 ?>
                 </span>
                 <h5><a href="timeline.php" class="profile-link" style="font-size: 1.8rem;"><?php echo ucfirst($post_owner_name); ?></a></h5>
-                <p style="padding: .5rem 1rem; border-radius: .8rem;background-color: #FF6E31; color: white; width: fit-content;"><?php echo $friend_type; ?></p>
+                <p style="padding: .5rem 1rem; border-radius: .8rem;background-color: #FF6E31; color: white; width: fit-content;"><?php echo $user_type; ?></p>
                 </div>
             </div>
         </div>  
