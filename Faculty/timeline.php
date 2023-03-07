@@ -51,7 +51,7 @@ include('static/header.php');
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right main-menu">
             <li class="dropdown">
-                <a href="timeline.php" class="dropdown-toggle" >Timeline <span><img src="images/down-arrow.png" alt="" /></span></a>
+                <a href="newsfeed.php" class="dropdown-toggle" >Newsfeed <span><img src="images/down-arrow.png" alt="" /></span></a>
                   <!-- <ul class="dropdown-menu newsfeed-home">
                     <li><a href="index.php">sign in</a></li>
                     <li><a href="index-registeradmin.php">sign up</a></li>
@@ -114,7 +114,7 @@ include('static/header.php');
 
           <!-- Post Content
             ================================================= -->
-          <?php include('static/post-contents.php'); ?>
+          <?php include('static/timelinePosts.php'); ?>
         </div>
         <!-- Newsfeed Common Side Bar Right
           ================================================= -->
@@ -130,7 +130,7 @@ include('static/header.php');
       <div class="row">
         <div class="footer-wrapper">
           <div class="col-md-3 col-sm-3">
-            <a href="#"><img src="images/logo.png.jpg" alt="" class="footer-logo" /></a>
+            <a href="#"><img src="../images/logo.png.jpg" alt="" class="footer-logo" /></a>
             <ul class="list-inline social-icons">
               <li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
               <li><a href="#"><i class="icon ion-social-twitter"></i></a></li>
@@ -193,7 +193,7 @@ include('static/header.php');
 
   <!-- Scripts
     ================================================= -->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTMXfmDn0VlqWIyoOxK8997L-amWbUPiQ&amp;callback=initMap"></script>
+  <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTMXfmDn0VlqWIyoOxK8997L-amWbUPiQ&amp;callback=initMap"></script> -->
   <script src="../js/jquery-3.1.1.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
   <script src="../js/jquery.sticky-kit.min.js"></script>
