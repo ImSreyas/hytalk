@@ -130,103 +130,47 @@ if(isset($_POST['submit'])){
 
           <!-- Post Content
             ================================================= -->
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-    }
-    form {
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    label {
-      display: inline-block;
-      margin-bottom: 5px;
-    }
-    input[type="text"], input[type='number'] {
-      padding: 5px;
-      border: 2px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      width: 100%;
-      resize: vertical;
-    }
-    input[type="submit"] {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-      margin-top: 1rem;
-    }
-    input[type="submit"]:hover {
-      background-color: #45a049;
-    }
-    .red{
-      color: #3d3d3d;
-      font-size: 2rem;
-      text-align: center;
-      padding: 2rem;
-      background-color: #d4ffcc;
-      border-radius: 1rem;
-      margin-bottom: 1rem;
-    }
-  </style>
-  <form action="" method="post">
-    <?php 
-    if($m != ''){
-      ?>
-       <div class="red"><?php echo $m; ?></div>
-       <?php
-    }
-    ?>
-    <label for="job-title">Job Title:</label>
-    <input type="text" id="job-title" name="job-title" required>
-    
-    <label for="company-name">Company Name:</label required>
-    <input type="text" id="company-name" name="company-name" required>
+        <?php 
 
-    <label for="numberOfStudents">Student's count:</label>
-    <input type="number" id="student-count" name="student-count" required>
-    
-    
-    <input type="submit" name='submit' value="Submit">
-  </form>
-<script>
-  const studentNameInput = document.getElementById("student-count");
-  const form = document.querySelector("form");
-    let i = 0;
-  studentNameInput.addEventListener("input", () => {
-    const stu = document.querySelectorAll('#student-name');
-    stu.forEach(item => {
-        item.remove()
-    })
-    const la = document.querySelectorAll('#student-label');
-    la.forEach(item => {
-        item.remove()
-    })
-    
-    // Check if the student name input field has a value
-    for(i=0; i< studentNameInput.value ; i++) {
-      // Create a new input field for additional student names
-      const label = document.createElement("label")
-      label.id = 'student-label'
-      label.innerText = 'student name'
-      const newStudentInput = document.createElement("input");
-      newStudentInput.type = "text";
-      newStudentInput.id = "student-name";
-      newStudentInput.name = "student-name[]";
-      newStudentInput.required = true
-      // Append the new input field after the current student name input field
-      studentNameInput.insertAdjacentElement("afterend", newStudentInput);
-      studentNameInput.insertAdjacentElement("afterend", label);
-    }
-  });
-</script>
+
+        // Query database
+        $sql = "SELECT name, company_name, designation FROM table_name ORDER BY company_name, designation";
+        $result = mysqli_query($conn, $sql);
+
+        // Display cards for each unique combination of company name and designation
+        $current_company = null;
+        $current_designation = null;
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            $name = $row["name"];
+            $company_name = $row["company_name"];
+            $designation = $row["designation"];
+
+            if ($company_name != $current_company || $designation != $current_designation) {
+                // Display card for new unique combination of company name and designation
+                echo "<div class='card'>";
+                echo "<h2>$company_name - $designation</h2>";
+                echo "<ul>";
+            }
+
+            // Display name
+            echo "<li>$name</li>";
+
+            if ($company_name != $current_company || $designation != $current_designation) {
+                echo "</ul>";
+                echo "</div>";
+            }
+
+            // Update current company and designation
+            $current_company = $company_name;
+            $current_designation = $designation;
+        }
+
+        // Close database connection
+        mysqli_close($conn);
+
+        ?>
+
 
 
           
