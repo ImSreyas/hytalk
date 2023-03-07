@@ -10,9 +10,9 @@ if (isset($_POST['update-password'])) {
   $new_password = $_POST['new-password'];
   $confirm_password = $_POST['confirm-password'];
 
-  if(mysqli_query($conn, "select * from faculty where id='$FacId' && password='$old_password'")->num_rows > 0){
+  if(mysqli_query($conn, "select * from recruiter where id='$recruiter_id' && password='$old_password'")->num_rows > 0){
     if($new_password == $confirm_password){
-      mysqli_query($conn, "update faculty set password='$confirm_password' where id='$FacId'");
+      mysqli_query($conn, "update recruiter set password='$confirm_password' where id='$recruiter_id'");
     } else {
       ?> 
       <script>alert('enter the same password...')</script>
@@ -130,9 +130,9 @@ if (isset($_POST['update-password'])) {
             <div class="row">
               <div class="col-md-3">
                 <div class="profile-info">
-                  <img src="../<?php echo $FacImage; ?>" alt="" class="img-responsive profile-photo" />
-                  <h3><?php echo $FacName; ?></h3>
-                  <p class="text-muted">Teacher</p>
+                  <img src="../<?php echo $recruiter_Img; ?>" alt="" class="img-responsive profile-photo" />
+                  <h3><?php echo $recruiter_Name; ?></h3>
+                  <p class="text-muted">Recruiter</p>
                 </div>
               </div>
               <div class="col-md-9">
@@ -143,6 +143,10 @@ if (isset($_POST['update-password'])) {
                   <li><a href="timeline-friends.html">Friends</a></li> -->
                 </ul>
                 <ul class="follow-me list-inline">
+                <?php
+                $TotalStudentNoQuery = mysqli_query($conn, "SELECT * FROM `student`");
+                $TotalStudentNo = mysqli_num_rows($TotalStudentNoQuery);
+                ?>
                   <li><?php echo $TotalStudentNo; ?> followers </li>
                   <li><button class="btn-primary">Add Friend</button></li>
                 </ul>

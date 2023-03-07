@@ -13,10 +13,10 @@ if(isset($_POST['update-btn'])) {
 //   $month = $_POST['month'];
 //   $year = $_POST['year'];
   $gender = $_POST['optradio'];
-  $department = $_POST['Department'];
+  $company = $_POST['company'];
   $designation = $_POST['designation'];
 
-  var_dump($designation);
+  
 
   $image = $_FILES['image'];
   $image_fileName = $_FILES['image']['name'];
@@ -49,43 +49,45 @@ if(isset($_POST['update-btn'])) {
 // Dob = '$year-$month-$day',
 // register_no = '$register_no',
 // Gender = '$gender',
-$email = $_SESSION['email'];
-$teacherList = mysqli_query($conn, "select * from faculty where Email='$email'");
+$email = $_SESSION['Email'];
+$teacherList = mysqli_query($conn, "select * from recruiter where Email='$email'");
 $Fac_detail=$teacherList->fetch_assoc();
 $FacId=$Fac_detail['id'];
 
 $queryTxt = 
 "
-UPDATE faculty
+UPDATE recruiter
 SET 
     Name = '$firstname $lastname',
-    designation = '$designation',
-    Faculty_pic = '$image_fileDestination_new',
+    Company_details = '$company',
+    recruiter_pic = '$image_fileDestination_new',
     Email = '$email',
     Mobile_no = '$mobile',
     Password = '$password',
-    Department = '$department'
+    Designation = '$designation'
 WHERE
     id ='$FacId'
 ";
 
 $queryTxtNoImage = 
 "
-UPDATE faculty
+UPDATE recruiter
 SET 
     Name = '$firstname $lastname',
-    designation = '$designation',
+    Designation = '$designation',
     Email = '$email',
     Mobile_no = '$mobile',
     Password = '$password',
-    Department = '$department'
+    Company_details = '$company'
 WHERE
     id ='$FacId'
 ";
 if($image_fileDestination_new==NULL){
     mysqli_query($conn, $queryTxtNoImage);
+    $_SESSION['infoEditStatus']="true";
 }else{
     mysqli_query($conn, $queryTxt);
+    $_SESSION['infoEditStatus']="true";
 }
   
 }

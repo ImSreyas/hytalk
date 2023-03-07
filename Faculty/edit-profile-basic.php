@@ -72,16 +72,6 @@ session_start();
 //   mysqli_query($conn, $queryTxt);
 // }
 
-$infoCheck=$_SESSION['infoEditStatus'];
-if($infoCheck=="true")
-{?>
-  <script>
-function myFunction() {
-  alert("Info Updated!");
-}
-</script>
-<?php
-}
 ?>
 
 <!DOCTYPE html>
