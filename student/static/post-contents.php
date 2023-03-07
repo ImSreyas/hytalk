@@ -21,11 +21,14 @@ while($p = $postContents->fetch_assoc()){
     $post_owner_caption = $p['caption'];
     $post_owner_content = $p['article'];
     $type = $p['user_type'];
-
+    if($type == 'student' && $current_user_id != $post_owner_id){
+        $fon = mysqli_query($conn, "select * from friends where user_id='$current_user_id' && friend_id='$post_owner_id' && status='1'");
+        if($fon->num_rows == 0) continue;
+    }
     $post_owner_date_and_time = explode(" ", $post_owner_time);
 
     $follow_or_not_count = mysqli_query($conn, "select * from friends where user_id='$student_id' && friend_id='$post_owner_id' && status='1'")->num_rows;
-    $follow_or_not = ($follow_or_not_count > 0)? 'Following' : 'Unfollowed';
+    $follow_or_not = ($follow_or_not_count > 0)? 'Following' : 'Follow';
     if($student_id == $post_owner_id) $follow_or_not = '';
 
     if($p['user_type'] == 'student'){
