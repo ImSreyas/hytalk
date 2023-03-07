@@ -19,4 +19,5 @@ include('../php/db/db.php');
 <?php
 $email=$_SESSION['Email'];
 $Rec_Details = mysqli_query($conn, "select * from recruiter where Email='$email'")->fetch_assoc();
+$recruiter_id = $Rec_Details['id'];
 ?>
