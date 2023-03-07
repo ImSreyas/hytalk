@@ -10,7 +10,7 @@
             <div><a href="newsfeed.php">My Newsfeed</a></div>
         </li>
         <li><i class="icon ion-ios-people"></i>
-            <div><a href="newsfeed-people-nearby.php">People Nearby</a></div>
+            <div><a href="placement.php">Add placed student's</a></div>
         </li>
         <!-- <li><i class="icon ion-ios-people-outline"></i>
             <div><a href="newsfeed-friends.php">Friends</a></div>
@@ -19,10 +19,7 @@
             <div><a href="newsfeed-messages.php">Messages</a></div>
         </li> -->
         <li><i class="icon ion-images"></i>
-            <div><a href="newsfeed-images.php">Images</a></div>
-        </li>
-        <li><i class="icon ion-ios-videocam"></i>
-            <div><a href="newsfeed-videos.php">Videos</a></div>
+            <div><a href="placementList.php">Placed student's list</a></div>
         </li>
     </ul><!--news-feed links ends-->
     <div id="chat-block">
