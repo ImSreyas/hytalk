@@ -41,7 +41,7 @@ include('static/header.php');
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index-registeradmin.php">
+          <a class="navbar-brand" href="#">
             <!-- <img src="images/logo.png" alt="logo" /> -->
             Hytalk
           </a>

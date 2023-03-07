@@ -64,7 +64,7 @@ if (isset($_POST['update-password'])) {
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index-registeradmin.php">Hytalk</a>
+            <a class="navbar-brand" href="#">Hytalk</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
