@@ -130,53 +130,59 @@ if(isset($_POST['submit'])){
 
           <!-- Post Content
             ================================================= -->
+           <style>
+		table {
+			font-family: Arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+			margin-bottom: 20px;
+			box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+		}
+
+		th, td {
+			text-align: left;
+			padding: 8px;
+			border-bottom: 1px solid #ddd;
+		}
+
+		th {
+			background-color: #4CAF50;
+			color: white;
+		}
+
+		tr:hover {
+			background-color: #f5f5f5;
+		}
+	</style>
         <?php 
 
 
         // Query database
-        $sql = "SELECT name, company_name, designation FROM table_name ORDER BY company_name, designation";
+        $sql = "SELECT student_name, Company_details, designation FROM placement ORDER BY Company_details, designation";
         $result = mysqli_query($conn, $sql);
-
-        // Display cards for each unique combination of company name and designation
-        $current_company = null;
-        $current_designation = null;
-
-        while ($row = mysqli_fetch_assoc($result)) {
-            $name = $row["name"];
-            $company_name = $row["company_name"];
-            $designation = $row["designation"];
-
-            if ($company_name != $current_company || $designation != $current_designation) {
-                // Display card for new unique combination of company name and designation
-                echo "<div class='card'>";
-                echo "<h2>$company_name - $designation</h2>";
-                echo "<ul>";
+        ?> 
+        <table>
+		<thead>
+			<tr>
+				<th>Student name</th>
+				<th>Company Name</th>
+				<th>Designation</th>
+			</tr>
+		</thead>
+        <tbody>
+        <?php
+            while($r = $result-> fetch_assoc()){
+                ?> 
+                <tr>
+                    <td><?php echo $r['student_name'] ?></td>
+                    <td><?php echo $r['Company_details'] ?></td>
+                    <td><?php echo $r['designation'] ?></td>
+                </tr>
+                <?php
             }
-
-            // Display name
-            echo "<li>$name</li>";
-
-            if ($company_name != $current_company || $designation != $current_designation) {
-                echo "</ul>";
-                echo "</div>";
-            }
-
-            // Update current company and designation
-            $current_company = $company_name;
-            $current_designation = $designation;
-        }
-
-        // Close database connection
-        mysqli_close($conn);
-
         ?>
-
-
-
-          
-
-
-
+        </tbody>
+        </table>
         </div>
         <!-- Newsfeed Common Side Bar Right
           ================================================= -->
