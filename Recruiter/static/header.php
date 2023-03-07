@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('../php/db/db.php');
 // if(!isset($_SESSION['student_id'])){
 //     header('location:../index.php');
@@ -19,4 +20,9 @@ include('../php/db/db.php');
 <?php
 $email=$_SESSION['Email'];
 $Rec_Details = mysqli_query($conn, "select * from recruiter where Email='$email'")->fetch_assoc();
+$recruiter_id = $Rec_Details['id'];
+$recruiter_Name=$Rec_Details['Name'];
+$recruiter_Img=$Rec_Details['recruiter_pic'];
+
+
 ?>

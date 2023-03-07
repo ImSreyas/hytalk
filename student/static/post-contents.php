@@ -11,7 +11,7 @@ if(isset($_POST['comment-btn'])){
     mysqli_query($conn, "insert into comment set comment='$comment_content', post_id='$post_id_', commenter_id='$current_user_id', post_owner_id='$post_owner', commenter_type='student'");
 }
 
-$postContents = mysqli_query($conn, "select * from feed");
+$postContents = mysqli_query($conn, "select * from feed order by id desc");
 while($p = $postContents->fetch_assoc()){
     $post_id = $p['id'];
     $post_owner_id = $p['user_id'];
