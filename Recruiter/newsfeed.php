@@ -1,5 +1,4 @@
 <?php
-session_start();
 include('static/header.php');
 ?>
 
@@ -83,7 +82,7 @@ include('static/header.php');
                 </ul>
               </li> -->
 
-            <li class="dropdown"><a href="contact.php">Contact</a></li>
+            <li class="dropdown"><a href="#">Contact</a></li>
             <li class="dropdown"><a href="php/logout.php">logout</a></li>
           </ul>
           <form class="navbar-form navbar-right hidden-sm">

@@ -24,5 +24,4 @@ $recruiter_id = $Rec_Details['id'];
 $recruiter_Name=$Rec_Details['Name'];
 $recruiter_Img=$Rec_Details['recruiter_pic'];
 
-
 ?>
