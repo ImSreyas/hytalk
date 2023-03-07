@@ -237,7 +237,7 @@ if (isset($_POST['update-password'])) {
       	<div class="row">
           <div class="footer-wrapper">
             <div class="col-md-3 col-sm-3">
-              <a href="#"><img src="images/logo.png.jpg" alt="" class="footer-logo" /></a>
+              <a href="#"><img src="../images/logo.png.jpg" alt="" class="footer-logo" /></a>
               <ul class="list-inline social-icons">
               	<li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
               	<li><a href="#"><i class="icon ion-social-twitter"></i></a></li>
@@ -249,18 +249,18 @@ if (isset($_POST['update-password'])) {
             <div class="col-md-2 col-sm-2">
               <h5>For individuals</h5>
               <ul class="footer-links">
-                <li><a href="index-registerstudent.php">Signup</a></li>
-                <li><a href="index-registeradmin.php">login</a></li>
+                <li><a href="../index-registerstudent.php">Signup</a></li>
+                <li><a href="../index-registeradmin.php">login</a></li>
                 <li><a href="#">Explore</a></li>
                 <li><a href="#">Features</a></li>
-                <li><a href="contact.html">contact</a></li>
+                <li><a href="../contact.php">contact</a></li>
               </ul>
             </div>
             <div class="col-md-2 col-sm-2">
               <h5>For Recruiters</h5>
               <ul class="footer-links">
-                <li><a href="index-registerrecruiter.php">Recruiter signup</a></li>
-                <li><a href="contact.html"></a>Contact</li>
+                <li><a href="../index-registerrecruiter.php">Recruiter signup</a></li>
+                <li><a href="../contact.php"></a>Contact</li>
                 <li><a href="#">Features</a></li>
                 <li><a href="#">Explore</a></li>
                 <li><a href="#">Advertise</a></li>
@@ -269,8 +269,8 @@ if (isset($_POST['update-password'])) {
             <div class="col-md-2 col-sm-2">
               <h5>About</h5>
               <ul class="footer-links">
-                <li><a href="contact.html">About us</a></li>
-                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="../contact.php">About us</a></li>
+                <li><a href="../contact.php">Contact us</a></li>
                 <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Terms</a></li>
                 <li><a href="faq.html">Help</a></li>
