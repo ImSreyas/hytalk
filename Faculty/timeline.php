@@ -8,7 +8,7 @@ include('static/header.php');
 
 <head>
 
-  <title>Recruiter</title>
+  <title>Faculty</title>
 
   <!-- Stylesheets
     ================================================= -->
@@ -50,22 +50,23 @@ include('static/header.php');
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right main-menu">
-            <!-- <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span><img src="images/down-arrow.png" alt="" /></span></a>
-                  <ul class="dropdown-menu newsfeed-home">
+            <li class="dropdown">
+                <a href="newsfeed.php" class="dropdown-toggle" >Newsfeed <span><img src="images/down-arrow.png" alt="" /></span></a>
+                  <!-- <ul class="dropdown-menu newsfeed-home">
                     <li><a href="index.php">sign in</a></li>
                     <li><a href="index-registeradmin.php">sign up</a></li>
-                  </ul>
-              </li> -->
+                  </ul> -->
+              </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Settings <span><img src="images/down-arrow.png" alt="" /></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Settings<span><img src="../images/down-arrow.png" alt="" /></span></a>
               <ul class="dropdown-menu newsfeed-home">
                 <li><a href="edit-profile-basic.php">Edit: Basic Info</a></li>
-                <li><a href="edit-profile-password.php">Change Password</a></li>
-                <!-- <li><a href="newsfeed-friends.php">My friends</a></li>
-                <li><a href="newsfeed-messages.php">Chatroom</a></li>
-                <li><a href="newsfeed-images.php">Images</a></li>
-                <li><a href="newsfeed-videos.php">Videos</a></li> -->
+                <li><a href="">Change Password</a></li>
+                <!-- <li><a href="newsfeed-people-nearby.php">Poeple Nearly</a></li>
+                    <li><a href="newsfeed-friends.php">My friends</a></li>
+                    <li><a href="newsfeed-messages.php">Chatroom</a></li>
+                    <li><a href="newsfeed-images.php">Images</a></li>
+                    <li><a href="newsfeed-videos.php">Videos</a></li> -->
               </ul>
             </li>
             <!-- <li class="dropdown">
@@ -82,8 +83,7 @@ include('static/header.php');
                   <li><a href="edit-profile-password.php">Change Password</a></li>
                 </ul>
               </li> -->
-
-            <li class="dropdown"><a href="contact.php">Contact</a></li>
+            <li class="dropdown"><a href="../contact.php">Contact</a></li>
             <li class="dropdown"><a href="php/logout.php">logout</a></li>
           </ul>
           <form class="navbar-form navbar-right hidden-sm">
@@ -114,15 +114,11 @@ include('static/header.php');
 
           <!-- Post Content
             ================================================= -->
-          <?php 
-          include('static/post-contents.php'); 
-          ?>
+          <?php include('static/timelinePosts.php'); ?>
         </div>
         <!-- Newsfeed Common Side Bar Right
           ================================================= -->
-        <?php
-        // include('static/right-side-bar.php'); 
-        ?>
+        <?php include('static/right-side-bar.php'); ?>
       </div>
     </div>
   </div>
@@ -134,7 +130,7 @@ include('static/header.php');
       <div class="row">
         <div class="footer-wrapper">
           <div class="col-md-3 col-sm-3">
-            <a href="#"><img src="images/logo.png.jpg" alt="" class="footer-logo" /></a>
+            <a href="#"><img src="../images/logo.png.jpg" alt="" class="footer-logo" /></a>
             <ul class="list-inline social-icons">
               <li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
               <li><a href="#"><i class="icon ion-social-twitter"></i></a></li>
@@ -146,18 +142,18 @@ include('static/header.php');
           <div class="col-md-2 col-sm-2">
             <h5>For individuals</h5>
             <ul class="footer-links">
-              <li><a href="index-registerstudent.php">Signup</a></li>
-              <li><a href="index-registeradmin.php">login</a></li>
+              <li><a href="../index-registerstudent.php">Signup</a></li>
+              <li><a href="../index-registeradmin.php">login</a></li>
               <li><a href="#">Explore</a></li>
               <li><a href="#">Features</a></li>
-              <li><a href="contact.html">contact</a></li>
+              <li><a href="../contact.php">contact</a></li>
             </ul>
           </div>
           <div class="col-md-2 col-sm-2">
             <h5>For Recruiters</h5>
             <ul class="footer-links">
-              <li><a href="index-registerrecruiter.php">Recruiter signup</a></li>
-              <li><a href="contact.html"></a>Contact</li>
+              <li><a href="../index-registerrecruiter.php">Recruiter signup</a></li>
+              <li><a href="../contact.php"></a>Contact</li>
               <li><a href="#">Features</a></li>
               <li><a href="#">Explore</a></li>
               <li><a href="#">Advertise</a></li>
@@ -166,8 +162,8 @@ include('static/header.php');
           <div class="col-md-2 col-sm-2">
             <h5>About</h5>
             <ul class="footer-links">
-              <li><a href="contact.html">About us</a></li>
-              <li><a href="contact.html">Contact us</a></li>
+              <li><a href="../contact.php">About us</a></li>
+              <li><a href="../contact.php">Contact us</a></li>
               <li><a href="#">Privacy Policy</a></li>
               <li><a href="#">Terms</a></li>
               <li><a href="faq.html">Help</a></li>
@@ -197,7 +193,7 @@ include('static/header.php');
 
   <!-- Scripts
     ================================================= -->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTMXfmDn0VlqWIyoOxK8997L-amWbUPiQ&amp;callback=initMap"></script>
+  <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTMXfmDn0VlqWIyoOxK8997L-amWbUPiQ&amp;callback=initMap"></script> -->
   <script src="../js/jquery-3.1.1.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
   <script src="../js/jquery.sticky-kit.min.js"></script>
