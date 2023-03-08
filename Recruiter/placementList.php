@@ -1,5 +1,4 @@
 <?php
-session_start();
 include('static/header.php');
 ?>
 <?php
@@ -74,14 +73,14 @@ if(isset($_POST['submit'])){
                   </ul>
               </li> -->
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Newsfeed <span><img src="images/down-arrow.png" alt="" /></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Settings <span><img src="images/down-arrow.png" alt="" /></span></a>
               <ul class="dropdown-menu newsfeed-home">
-                <li><a href="newsfeed.php">Newsfeed</a></li>
-                <li><a href="newsfeed-people-nearby.php">Poeple Nearly</a></li>
-                <li><a href="newsfeed-friends.php">My friends</a></li>
+                <li><a href="edit-profile-basic.php">Edit: Basic Info</a></li>
+                <li><a href="edit-profile-password.php">Change Password</a></li>
+                <!-- <li><a href="newsfeed-friends.php">My friends</a></li>
                 <li><a href="newsfeed-messages.php">Chatroom</a></li>
                 <li><a href="newsfeed-images.php">Images</a></li>
-                <li><a href="newsfeed-videos.php">Videos</a></li>
+                <li><a href="newsfeed-videos.php">Videos</a></li> -->
               </ul>
             </li>
             <!-- <li class="dropdown">

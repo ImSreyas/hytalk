@@ -1,6 +1,9 @@
 <?php
 session_start();
 include('../php/db/db.php');
+if(!isset($_SESSION['Email'])){
+    header('location:../index.php');
+}
 // if(!isset($_SESSION['student_id'])){
 //     header('location:../index.php');
 // }
@@ -23,6 +26,5 @@ $Rec_Details = mysqli_query($conn, "select * from recruiter where Email='$email'
 $recruiter_id = $Rec_Details['id'];
 $recruiter_Name=$Rec_Details['Name'];
 $recruiter_Img=$Rec_Details['recruiter_pic'];
-
 
 ?>
