@@ -14,7 +14,7 @@ $dep = $_POST['Dep'];
 $checkEmail="SELECT * FROM `faculty` WHERE `Email` = '$email';";
 $checkExe = mysqli_query($conn, $checkEmail);
 if(mysqli_num_rows($checkExe)==0){
-    $insert_query ="INSERT INTO `faculty` (`id`, `Name`, `designation`, `Dob`, `Email`, `Faculty_pic`, `Department`, `Mobile_no`, `Username`, `Password`) VALUES (NULL, '$name', '$desi', '0/0/0', '$email', NULL, '$dep', '$mob', NULL, '$pas');";
+    $insert_query ="INSERT INTO `faculty` (`id`, `Name`, `designation`, `Dob`, `Email`, `Faculty_pic`, `Department`, `Mobile_no`, `Username`, `Password`) VALUES (NULL, '$name', '$desi', '0/0/0', '$email', 'images/faculty/default.png', '$dep', '$mob', NULL, '$pas');";
     if($exe = mysqli_query($conn, $insert_query))
     {
         // while the condition true re-direct to registration page
